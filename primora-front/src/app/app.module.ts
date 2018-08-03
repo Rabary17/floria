@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
 import { ArticleThumbComponent } from './article-thumb/article-thumb.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
-import { ArticleDetailComponent } from './article-detail/articles-detail.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { SimulationCreditComponent } from './simulation-credit/simulation-credit.component';
 import { RenseignementBanqueComponent } from './renseignement-banque/renseignement-banque.component';
 import { RegisterComponent } from './register/register.component';
