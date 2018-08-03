@@ -1,4 +1,4 @@
-<app-article-thumb></app-article-thumb>
-<app-article-thumb></app-article-thumb>
-<app-article-thumb></app-article-thumb>
-<app-article-thumb></app-article-thumb>
+<div *ngFor="let article of listeArticles">
+  <app-article-thumb [article]="article"></app-article-thumb>
+  <hr />
+</div>
