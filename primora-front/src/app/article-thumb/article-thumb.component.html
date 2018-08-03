@@ -1,3 +1,17 @@
-<p>
-  article-thumb works!
-</p>
+<div>
+    <img [src]="article.image">
+    <div>
+      A partir de {{ article.mensualite }} Ar/mois
+    </div>
+    <div>
+      <h2>{{ article.prix_cash }} Ar</h2>
+    </div>
+    <div>
+      <div>
+        <span>{{ article.categorie }}</span>
+        <span>{{ article.lieu }}</span>
+      </div>
+      <span><h2>{{ article.titre }}</h2></span>
+      <p>{{ article.subtitle }}</p>
+    </div>
+</div>

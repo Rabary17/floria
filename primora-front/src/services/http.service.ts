@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HttpService {
   headers: HttpHeaders;
+  apiUrl: String = 'http://localhost:3000/api/';
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
@@ -16,12 +17,18 @@ export class HttpService {
     })
   }
 
-  get(url:string) {
-    return this.http.get(url);
+  get(url:string): Promise<any> {
+    return new Promise((resolv, reject) => {
+      this.http.get(this.apiUrl + url)
+        .toPromise()
+        .then(res => {
+          resolv(res);
+        });
+    });
   }
 
   post(url:string, data:object) {
-    return this.http.post<object>(url, data, {
+    return this.http.post<object>(this.apiUrl + url, data, {
       headers: this.headers
     });
   }

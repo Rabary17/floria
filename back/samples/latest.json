@@ -1,0 +1,25 @@
+{
+  "items": [{
+    "titre": "Chocapic",
+    "subtitle": "Mix",
+    "description": "......",
+    "date": 1533295199137,
+    "prix_cash": 12590,
+    "currency": "MGA",
+    "lieu": "Tana",
+    "image": "https://www.auchandirect.fr/backend/media/products_images/0N_76526.jpg",
+    "categorie": "Biscuit",
+    "mensualite": "472"
+  }, {
+    "titre": "MORA",
+    "subtitle": "Be",
+    "description": "......",
+    "date": 1533295199137,
+    "prix_cash": 12590,
+    "currency": "MGA",
+    "lieu": "Tana",
+    "image": "https://www.mora.be/sites/mora-be/files/styles/snack/public/images/3F3D9F10-A64F-4596-87AB-2D74287B8D71.jpg?itok=Cv65OBuu",
+    "categorie": "Biscuit",
+    "mensualite": "194"
+  }]
+}

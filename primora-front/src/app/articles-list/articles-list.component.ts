@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpService} from "../../services/http.service";
+
+import { Article } from '../article-detail/article';
 
 @Component({
   selector: 'app-articles-list',
+  inputs: ['apiurl'],
   templateUrl: './articles-list.component.html',
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticlesListComponent implements OnInit {
+  public listeArticles: Array<Article>;
+  public apiurl: string;
 
-  constructor() { }
+  constructor(private http: HttpService) {
+    this.listeArticles = [];
+  }
 
   ngOnInit() {
+    console.log(this.apiurl);
+    this.http.get(this.apiurl).then(listeArticles => {
+      this.listeArticles = <Array<Article>> listeArticles.items;
+    });
   }
 
 }

@@ -1,3 +1,4 @@
-<p>
-  articles-list works!
-</p>
+<div *ngFor="let article of listeArticles">
+  <app-article-thumb [article]="article"></app-article-thumb>
+  <hr />
+</div>
