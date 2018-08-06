@@ -1,5 +1,6 @@
 {
   "items": [{
+    "uuid": "5eb55ee2-878f-4d67-9189-5228371cd788",
     "titre": "Chocapic",
     "subtitle": "Mix",
     "description": "......",
@@ -11,6 +12,7 @@
     "categorie": "Biscuit",
     "mensualite": "472"
   }, {
+    "uuid": "4e0b9e4b-495e-4004-be89-f210ea71ab42",
     "titre": "MORA",
     "subtitle": "Be",
     "description": "......",
