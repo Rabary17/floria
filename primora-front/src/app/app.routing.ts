@@ -13,7 +13,7 @@ import {HomeComponent} from './home/home.component';
 
 
 const appRoutes: Routes = [
-    { path:'', component		: AppComponent},
+    { path:'', component		: HomeComponent },
     { path: 'accueil', component: HomeComponent },
     { path: 'ajouter', component: ArticleAddComponent },
     { path: 'modifier', component: ArticleAddComponent },
