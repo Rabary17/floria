@@ -1,6 +1,7 @@
 <div>
     <img [src]="article.image">
     <div>
+      id : {{ article.uid }}
       A partir de {{ article.mensualite }} Ar/mois
     </div>
     <div>
@@ -11,7 +12,7 @@
         <span>{{ article.categorie }}</span>
         <span>{{ article.lieu }}</span>
       </div>
-      <span><h2>{{ article.titre }}</h2></span>
+      <span><h2><a [routerLink]="['/article' , article.uid]">{{ article.titre }}</a></h2></span>
       <p>{{ article.subtitle }}</p>
     </div>
 </div>

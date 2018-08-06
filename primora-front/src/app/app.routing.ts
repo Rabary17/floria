@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     { path: 'ajouter', component: ArticleAddComponent },
     { path: 'modifier', component: ArticleAddComponent },
     { path: 'liste', component: ArticlesListComponent },
-    { path: 'detail', component: ArticleDetailComponent} ,
+    { path: 'article/:id', component: ArticleDetailComponent} ,
     { path: 'simulation', component: SimulationCreditComponent },
     { path: 'banque', component: RenseignementBanqueComponent },
 
