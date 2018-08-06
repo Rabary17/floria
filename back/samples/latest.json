@@ -1,5 +1,6 @@
 {
   "items": [{
+    "uid": "1",
     "titre": "Chocapic",
     "subtitle": "Mix",
     "description": "......",
@@ -11,6 +12,7 @@
     "categorie": "Biscuit",
     "mensualite": "472"
   }, {
+    "uid": "2",
     "titre": "MORA",
     "subtitle": "Be",
     "description": "......",
