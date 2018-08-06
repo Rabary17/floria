@@ -9,6 +9,7 @@ import { Article } from '../article-detail/article';
   templateUrl: './articles-list.component.html',
   styleUrls: ['./articles-list.component.css']
 })
+
 export class ArticlesListComponent implements OnInit {
   public listeArticles: Array<Article>;
   public apiurl: string;
@@ -23,5 +24,4 @@ export class ArticlesListComponent implements OnInit {
       this.listeArticles = <Array<Article>> listeArticles.items;
     });
   }
-
 }

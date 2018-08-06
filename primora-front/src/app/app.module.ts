@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { RouteModule } from './app.routing';
 import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
 import { ArticleThumbComponent } from './article-thumb/article-thumb.component';
@@ -31,11 +33,15 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     LoginComponent,
     FacebookLoginComponent,
     ArticleAddComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouteModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
