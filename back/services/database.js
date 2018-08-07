@@ -21,33 +21,30 @@ class Mysql {
         return mysql.escape(str);
     }
 
-    select(sql, params) {
-        if(typeof params === 'undefined') params = {};
-        // TODO params
+    query(sql, params) {
         return new Promise((resolve, reject) => {
-            let queryArgs = [];
-            queryArgs.push(this.escape(JSON.stringify(params)));
-            for(let i =2; i < arguments.length; i++) {
-                if(typeof arguments[i] !== 'undefined') queryArgs.push(this.escape(arguments[i]));
-            }
-            let query = 'CALL os_' + sql + '('+ queryArgs.join(',') +')';
-            console.log(query);
-            this.pool.query(query, function(err, rows, fields) {
-                if (err) {
-                    reject(err.message);
+            this.pool.query(sql, params, function (error, rows, fields) {
+                console.log(rows);
+                if (error) {
+                    reject(error);
                     return false;
                 }
-                // TODO OkPacket in results ?
+                // TODO OkPacket in rows ?
                 if(typeof rows !== 'undefined' && 0 in rows) resolve(rows[0]);
                 else resolve(rows);
             });
         });
     }
 
-    query(sql, params) {
-        return this.select(sql, params, arguments[2], arguments[3], arguments[4]).then(row => {
-            if(row[0]) return row[0];
-            else return row;
+    queryAll(sql, params) {
+        return new Promise((resolve, reject) => {
+            this.pool.query(sql, params, function (error, rows, fields) {
+                if (error) {
+                    reject(error);
+                    return false;
+                }
+                resolve(rows);
+            });
         });
     }
 }

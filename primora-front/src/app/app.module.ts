@@ -22,6 +22,10 @@ import { PageHomeComponent } from './page-home/page-home.component';
 import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3553099aa0f4133676ca0b8148f8205a20622cd
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +45,11 @@ import { PageAddArticleComponent } from './page-add-article/page-add-article.com
     PageResultComponent,
     PageFicheArticleComponent,
     PageAddArticleComponent,
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> a3553099aa0f4133676ca0b8148f8205a20622cd
   ],
   imports: [
     BrowserModule,
