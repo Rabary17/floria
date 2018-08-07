@@ -17,7 +17,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
 import { ArticleAddComponent } from './article/article-add/article-add.component';
-import { UploadFileComponent } from './upload-file/upload-file.component'
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import { PageHomeComponent } from './page-home/page-home.component';
+import { PageResultComponent } from './page-result/page-result.component';
+import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
+import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { UploadFileComponent } from './upload-file/upload-file.component'
     LoginComponent,
     FacebookLoginComponent,
     ArticleAddComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    PageHomeComponent,
+    PageResultComponent,
+    PageFicheArticleComponent,
+    PageAddArticleComponent,
     
     
   ],
