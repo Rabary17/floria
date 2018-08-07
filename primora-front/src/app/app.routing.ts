@@ -9,10 +9,12 @@ import {ArticleThumbComponent} from './article/article-thumb/article-thumb.compo
 import {ArticlesListComponent} from './article/articles-list/articles-list.component';
 import {RenseignementBanqueComponent} from './renseignement-banque/renseignement-banque.component';
 import {SimulationCreditComponent} from './simulation-credit/simulation-credit.component';
+import {PageHomeComponent} from './page-home/page-home.component';
 
 
 const appRoutes: Routes = [
-    { path:'', component		: AppComponent },
+    { path:'', component		: PageHomeComponent },
+    { path: 'accueil', component: PageHomeComponent },
     { path: 'ajouter', component: ArticleAddComponent },
     { path: 'modifier', component: ArticleAddComponent },
     { path: 'liste', component: ArticlesListComponent },
