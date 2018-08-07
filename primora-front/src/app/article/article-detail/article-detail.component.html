@@ -1,7 +1,81 @@
-<app-header></app-header>
 <div>
   <img [src]="article.image">
   <h1>{{article.titre}}</h1>
   <p>{{article.subtitle}}</p>
 </div>
+<table>
+  <thead>Informations</thead>
+  <tr>
+    <td>Marque</td>
+    <td>{{article.informations.marque}}</td>
+  </tr>
+  <tr>
+    <td>Medèle</td>
+    <td>{{article.informations.modele}}</td>
+  </tr>
+  <tr>
+    <td>Version</td>
+    <td>{{article.informations.version}}</td>
+  </tr>
+  <tr>
+    <td>Année</td>
+    <td>{{article.informations.annee}}</td>
+  </tr>
+  <tr>
+    <td>Mise en circulation</td>
+    <td>{{article.informations.mise_en_circulation}}</td>
+  </tr>
+  <tr>
+    <td>Kilomètrage</td>
+    <td>{{article.informations.kilometrage}}</td>
+  </tr>
+  <tr>
+    <td>Carrosserie</td>
+    <td>{{article.informations.carrosserie}}</td>
+  </tr>
+  <tr>
+    <td>Carburant</td>
+    <td>{{article.informations.carburant}}</td>
+  </tr>
+  <tr>
+    <td>Transmission</td>
+    <td>{{article.informations.transmission}}</td>
+  </tr>
+  <tr>
+    <td>Vitesse</td>
+    <td>{{article.informations.vitesse}}</td>
+  </tr>
+  <tr>
+    <td>Couleur</td>
+    <td>{{article.informations.couleur}}</td>
+  </tr>
+  <tr>
+    <td>Places</td>
+    <td>{{article.informations.places}}</td>
+  </tr>
+  <tr>
+    <td>Porte</td>
+    <td>{{article.informations.porte}}</td>
+  </tr>
+  <tr>
+    <td>Puissance fiscal</td>
+    <td>{{article.informations.puissance_fiscal}}</td>
+  </tr>
+  <tr>
+    <td>Puissance réel</td>
+    <td>{{article.informations.puissance_reel}}</td>
+  </tr>
+  <tr>
+    <td>Première main</td>
+    <td>{{article.informations.premiere_main}}</td>
+  </tr>
+  <tr>
+    <td>Emission co2</td>
+    <td>{{article.informations.emission_co2}}</td>
+  </tr>
+  <tr>
+    <td>Réference</td>
+    <td>{{article.informations.reference}}</td>
+  </tr>
+</table>
 <app-simulation-credit></app-simulation-credit>
