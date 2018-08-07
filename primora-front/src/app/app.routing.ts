@@ -3,18 +3,16 @@ import { NgModule } from '@angular/core';
 
 
 import {AppComponent} from './app.component';
-import {ArticleAddComponent} from './article-add/article-add.component';
-import {ArticleDetailComponent} from './article-detail/article-detail.component';
-import {ArticleThumbComponent} from './article-thumb/article-thumb.component';
-import {ArticlesListComponent} from './articles-list/articles-list.component';
+import {ArticleAddComponent} from './article/article-add/article-add.component';
+import {ArticleDetailComponent} from './article/article-detail/article-detail.component';
+import {ArticleThumbComponent} from './article/article-thumb/article-thumb.component';
+import {ArticlesListComponent} from './article/articles-list/articles-list.component';
 import {RenseignementBanqueComponent} from './renseignement-banque/renseignement-banque.component';
 import {SimulationCreditComponent} from './simulation-credit/simulation-credit.component';
-import {HomeComponent} from './home/home.component';
 
 
 const appRoutes: Routes = [
-    { path:'', component		: HomeComponent },
-    { path: 'accueil', component: HomeComponent },
+    { path:'', component		: AppComponent },
     { path: 'ajouter', component: ArticleAddComponent },
     { path: 'modifier', component: ArticleAddComponent },
     { path: 'liste', component: ArticlesListComponent },
