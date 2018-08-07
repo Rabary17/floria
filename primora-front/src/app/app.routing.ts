@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 import {AppComponent} from './app.component';
-import {ArticleAddComponent} from './article-add/article-add.component';
-import {ArticleDetailComponent} from './article-detail/article-detail.component';
-import {ArticleThumbComponent} from './article-thumb/article-thumb.component';
-import {ArticlesListComponent} from './articles-list/articles-list.component';
+import {ArticleAddComponent} from './article/article-add/article-add.component';
+import {ArticleDetailComponent} from './article/article-detail/article-detail.component';
+import {ArticleThumbComponent} from './article/article-thumb/article-thumb.component';
+import {ArticlesListComponent} from './article/articles-list/articles-list.component';
 import {RenseignementBanqueComponent} from './renseignement-banque/renseignement-banque.component';
 import {SimulationCreditComponent} from './simulation-credit/simulation-credit.component';
 import {PageHomeComponent} from './page-home/page-home.component';
