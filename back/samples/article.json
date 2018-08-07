@@ -8,5 +8,25 @@
   "lieu": "Tana",
   "image": "https://www.pascogifts.com/files/cache/mini/files/mini-cooper-usb-stick-58bb1b30066ed.jpg",
   "categorie": "Voiture",
-  "mensualite": "194"
+  "mensualite": "194",
+  "informations": {
+    "marque":	"Toyota",
+    "modele":	"Aygo",
+    "version": "1.0 VVT-i 69ch x-play 5p",
+    "annee": "2015",
+    "mise_en_circulation": "18/06/2015",
+    "kilometrage": "37 789 km",
+    "carrosserie": "Berline",
+    "carburant": "Essence",
+    "transmission": "Manuelle",
+    "vitesse": "5 rapports",
+    "couleur": "Gris",
+    "places": "4",
+    "porte": "5",
+    "puissance_fiscal":	"4",
+    "puissance_reel":	"69",
+    "premiere_main": "Oui",
+    "emission_co2": "95 g/km",
+    "reference": "24560418"
+  }
 }
