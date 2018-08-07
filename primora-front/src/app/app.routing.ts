@@ -10,14 +10,15 @@ import {ArticlesListComponent} from './article/articles-list/articles-list.compo
 import {RenseignementBanqueComponent} from './renseignement-banque/renseignement-banque.component';
 import {SimulationCreditComponent} from './simulation-credit/simulation-credit.component';
 import {PageHomeComponent} from './page-home/page-home.component';
-
+import { PageAddArticleComponent} from './page-add-article/page-add-article.component';
+import { PageResultComponent} from './page-result/page-result.component';
+import { PageFicheArticleComponent} from './page-fiche-article/page-fiche-article.component';
 
 const appRoutes: Routes = [
     { path:'', component		: PageHomeComponent },
     { path: 'accueil', component: PageHomeComponent },
-    { path: 'ajouter', component: ArticleAddComponent },
-    { path: 'modifier', component: ArticleAddComponent },
-    { path: 'liste', component: ArticlesListComponent },
+    { path: 'ajouter', component: PageAddArticleComponent },
+    { path: 'result', component: PageResultComponent },
     { path: 'article/:id', component: ArticleDetailComponent} ,
     { path: 'simulation', component: SimulationCreditComponent },
     { path: 'banque', component: RenseignementBanqueComponent },

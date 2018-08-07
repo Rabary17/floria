@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import {HttpService} from "../../../services/http.service";
+//import {HttpService} from "../../../services/http.service";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-article-detail',
@@ -12,20 +13,19 @@ export class ArticleDetailComponent implements OnInit {
   private sub: any;
   private article;
   constructor(private route: ActivatedRoute,
-              private http: HttpService) {
+              private http: HttpClient) {
 
    }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
-      console.log(this.id);
-      this.http.get('article/' + this.id).then(detailArticle => {
-        this.article = detailArticle;
-        console.log(this.article);
-      });
-
-   });
+  //   this.sub = this.route.params.subscribe(params => {
+  //     this.id = +params['id'];
+  //     console.log(this.id);
+  //     this.http.get('article/' + this.id).then(detailArticle => {
+  //       this.article = detailArticle;
+  //       console.log(this.article);
+  //     });
+  //  });
   }
 
 }
