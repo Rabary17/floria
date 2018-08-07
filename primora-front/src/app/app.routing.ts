@@ -12,12 +12,12 @@ import {SimulationCreditComponent} from './simulation-credit/simulation-credit.c
 import {PageHomeComponent} from './page-home/page-home.component';
 import {PageResultComponent} from './page-result/page-result.component';
 import {PageFicheArticleComponent} from './page-fiche-article/page-fiche-article.component';
+import {PageAddArticleComponent} from './page-add-article/page-add-article.component';
 
 
 const appRoutes: Routes = [
     { path:'', component		: PageHomeComponent },
     { path: 'accueil', component: PageHomeComponent },
-    { path: 'ajouter', component: ArticleAddComponent },
     { path: 'modifier', component: ArticleAddComponent },
     { path: 'liste', component: ArticlesListComponent },
     { path: 'article/:id', component: ArticleDetailComponent} ,
@@ -25,6 +25,7 @@ const appRoutes: Routes = [
     { path: 'banque', component: RenseignementBanqueComponent },
     { path: 'result', component: PageResultComponent },
     { path: 'fiche', component: PageFicheArticleComponent },
+    { path: 'ajouter', component: PageAddArticleComponent },
 
     // {
     //   path: 'heroes',

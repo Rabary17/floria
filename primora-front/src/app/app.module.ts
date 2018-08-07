@@ -21,6 +21,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
+import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-artic
     PageHomeComponent,
     PageResultComponent,
     PageFicheArticleComponent,
+    PageAddArticleComponent,
     
     
   ],
