@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
   })
 export class ArticleService{
-    public apiUrl;
+	
     public url;
 
 	constructor(
@@ -23,7 +23,25 @@ export class ArticleService{
 		//const params = `authorization=${token}`;
 		//const header = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
 		
-		return this._http.get(`${this.url}/article/pinned`)
+		return this._http.get(`${this.url}/articles/pinned`)
+                         .pipe(map(res=>res));
+	}
+
+	getArticlesLast(){
+		//let params = "authorization="+token;
+		//const params = `authorization=${token}`;
+		//const header = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+		
+		return this._http.get(`${this.url}/articles/latest`)
+                         .pipe(map(res=>res));
+	}
+
+	getArticlesDetails(id){
+		//let params = "authorization="+token;
+		//const params = `authorization=${token}`;
+		//const header = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+		
+		return this._http.get(`${this.url}/article/${id}`)
                          .pipe(map(res=>res));
 	}
 }
