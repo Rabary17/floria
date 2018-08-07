@@ -10,6 +10,8 @@ import {ArticlesListComponent} from './article/articles-list/articles-list.compo
 import {RenseignementBanqueComponent} from './renseignement-banque/renseignement-banque.component';
 import {SimulationCreditComponent} from './simulation-credit/simulation-credit.component';
 import {PageHomeComponent} from './page-home/page-home.component';
+import {PageResultComponent} from './page-result/page-result.component';
+import {PageFicheArticleComponent} from './page-fiche-article/page-fiche-article.component';
 
 
 const appRoutes: Routes = [
@@ -21,6 +23,8 @@ const appRoutes: Routes = [
     { path: 'article/:id', component: ArticleDetailComponent} ,
     { path: 'simulation', component: SimulationCreditComponent },
     { path: 'banque', component: RenseignementBanqueComponent },
+    { path: 'result', component: PageResultComponent },
+    { path: 'fiche', component: PageFicheArticleComponent },
 
     // {
     //   path: 'heroes',

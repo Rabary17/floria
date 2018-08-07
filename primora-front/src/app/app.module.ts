@@ -19,6 +19,8 @@ import { FacebookLoginComponent } from './facebook-login/facebook-login.componen
 import { ArticleAddComponent } from './article/article-add/article-add.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { PageHomeComponent } from './page-home/page-home.component';
+import { PageResultComponent } from './page-result/page-result.component';
+import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { PageHomeComponent } from './page-home/page-home.component';
     ArticleAddComponent,
     UploadFileComponent,
     PageHomeComponent,
+    PageResultComponent,
+    PageFicheArticleComponent,
     
     
   ],
