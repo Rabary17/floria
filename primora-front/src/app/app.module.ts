@@ -18,7 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
 import { ArticleAddComponent } from './article-add/article-add.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
-import { HomeComponent } from './home/home.component';
+import { PageHomeComponent } from './page-home/page-home.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { HomeComponent } from './home/home.component';
     FacebookLoginComponent,
     ArticleAddComponent,
     UploadFileComponent,
-    HomeComponent,
+    PageHomeComponent,
     
     
   ],
