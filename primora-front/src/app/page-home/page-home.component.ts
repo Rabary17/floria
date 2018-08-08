@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ArticleService} from '../../services/article.service';
 
 @Component({
   selector: 'app-page-home',
@@ -6,10 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
+  public articleLast;
+  public articlePinned;
 
-  constructor() { }
+  constructor(private service: ArticleService) { 
+    this.articlePinned = [];
+  }
 
   ngOnInit() {
+    this.getAllArticlePinned();
   }
+	getAllArticlePinned(){
+			this.service.getArticlesPinned().subscribe(
+				response => {
+
+            this.articlePinned = response;
+            console.log(this.articlePinned);
+
+				},
+				error => {
+					console.log(<any>error);
+				}
+			);
+	}
 
 }

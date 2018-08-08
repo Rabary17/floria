@@ -22,7 +22,6 @@ import { PageHomeComponent } from './page-home/page-home.component';
 import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,15 +41,13 @@ import { PageAddArticleComponent } from './page-add-article/page-add-article.com
     PageResultComponent,
     PageFicheArticleComponent,
     PageAddArticleComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouteModule,
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

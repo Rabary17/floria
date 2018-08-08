@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpService} from "../../../services/http.service";
-
+//import {HttpService} from "../../../services/http.service";
+import { HttpClient } from '@angular/common/http';
 import { Article } from '../article-detail/article';
 
 @Component({
@@ -13,15 +13,15 @@ export class ArticlesListComponent implements OnInit {
   public listeArticles: Array<Article>;
   public apiurl: string;
 
-  constructor(private http: HttpService) {
+  constructor(private http: HttpClient) {
     this.listeArticles = [];
   }
 
   ngOnInit() {
-    console.log(this.apiurl);
-    this.http.get(this.apiurl).then(listeArticles => {
-      this.listeArticles = <Array<Article>> listeArticles.items;
-    });
+    console.log('article list component'+this.apiurl);
+    // this.http.get(this.apiurl).then(listeArticles => {
+    //   this.listeArticles = <Array<Article>> listeArticles.items;
+    // });
   }
 
 }
