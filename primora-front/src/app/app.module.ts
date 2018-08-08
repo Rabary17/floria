@@ -41,8 +41,6 @@ import { PageAddArticleComponent } from './page-add-article/page-add-article.com
     PageResultComponent,
     PageFicheArticleComponent,
     PageAddArticleComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
