@@ -10,7 +10,7 @@ export class PageHomeComponent implements OnInit {
   public articleLast;
   public articlePinned;
 
-  constructor(private service: ArticleService) { 
+  constructor(private service: ArticleService) {
     this.articlePinned = [];
   }
 
@@ -20,10 +20,7 @@ export class PageHomeComponent implements OnInit {
 	getAllArticlePinned(){
 			this.service.getArticlesPinned().subscribe(
 				response => {
-
-            this.articlePinned = response;
-            console.log(this.articlePinned);
-
+				  this.articlePinned = response;
 				},
 				error => {
 					console.log(<any>error);

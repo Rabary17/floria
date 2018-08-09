@@ -22,6 +22,8 @@ import { PageHomeComponent } from './page-home/page-home.component';
 import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import { PageAddArticleComponent } from './page-add-article/page-add-article.com
     BrowserModule,
     HttpClientModule,
     RouteModule,
+    FormsModule
   ],
 
   providers: [],

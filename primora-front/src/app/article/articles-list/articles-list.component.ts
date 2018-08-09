@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import {HttpService} from "../../../services/http.service";
 import { HttpClient } from '@angular/common/http';
-import { Article } from '../article-detail/article';
+import { Article } from '../../../models/article';
 
 @Component({
   selector: 'app-articles-list',

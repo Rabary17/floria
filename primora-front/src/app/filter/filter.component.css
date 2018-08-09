@@ -5,3 +5,33 @@
   border-bottom: 3px solid #2e88c2;
   background-color: #fff;
 }
+.filter-item {
+  margin: 0.5em;
+}
+
+.block50 {
+  display: inline-block;
+  width: calc(50% - 2em);
+}
+.margin-05 {
+  margin: 0.5em;
+}
+.label-prix {
+  display: block;
+  font-size: 0.8em;
+}
+.recherche-button-container {
+  text-align: center;
+}
+@media screen and (min-width: 384px) {
+  .filter-item {
+    display: inline-block;
+    width: calc(50% - 1em);
+  }
+}
+@media screen and (max-width: 384px) {
+  .block50 {
+    display: block;
+    width: calc(100% - 2em);
+  }
+}
