@@ -1,4 +1,7 @@
 <div class="filter">
+  <header>
+    Recherchez une annonce
+  </header>
   <div class="filter-item">
     <select [(ngModel)]="formData.categorie">
       <option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</option>
@@ -17,16 +20,16 @@
   <div class="filter-item">
       <label class="label-prix">Prix</label>
       <div class="block50 margin-05">
-        <select>
-          <option value="">De</option>
+        <select [(ngModel)]="formData.prix_min">
+          <option value="-">De</option>
           <option>3 000 000</option>
           <option>4 000 000</option>
           <option>5 000 000</option>
         </select>
       </div>
       <div class="block50 margin-05">
-        <select>
-          <option value="">A</option>
+        <select [(ngModel)]="formData.prix_max">
+          <option value="-">A</option>
           <option>6 000 000</option>
           <option>7 000 000</option>
           <option>8 000 000</option>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/services/http.service';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-filter',
@@ -60,10 +61,15 @@ export class FilterComponent implements OnInit {
     categorie: '-',
     mensualite: '-',
     duree: '-',
+    prix_min: '-',
+    prix_max: '-'
   };
 
 
-  constructor(private _http: HttpService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
 
   }
 
@@ -72,7 +78,7 @@ export class FilterComponent implements OnInit {
   }
 
   search() {
-    console.log(this.formData);
+    this.router.navigate(['result/' + btoa(JSON.stringify(this.formData)) ]);
   }
 
 }

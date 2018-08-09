@@ -61,5 +61,33 @@ module.exports = {
             `,
             [ pinnedValue ]
         );
+    },
+    search(params) {
+        console.log(params);
+        const parameters = [];
+        let sql = `
+            SELECT * 
+            FROM articles 
+            WHERE 1 = 1
+        `;
+        if(params.prix_min && params.prix_min !== '-') {
+            sql += ` AND prix_cash >= ? `;
+            parameters.push(params.prix_min);
+        }
+        if(params.prix_max && params.prix_max !== '-') {
+            sql += ` AND prix_cash <= ? `;
+            parameters.push(params.prix_max);
+        }
+        if(params.cat && params.cat !== '-') {
+            sql += ` AND categorie = ? `;
+            parameters.push(params.cat);
+        }
+        if(params.men && params.men !== '-') {
+            sql += ` AND mensualite = ? `;
+            parameters.push(params.men);
+        }
+
+        return Db.queryAll(sql, parameters);
+
     }
 };

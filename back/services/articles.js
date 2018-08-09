@@ -1,4 +1,5 @@
 const Db = require('./database');
+require('express');
 const fs = require('fs');
 const ArticleRepository = require('../repository/article');
 const CategorieRepository = require('../repository/category');
@@ -31,5 +32,12 @@ module.exports = {
                 resolve(result);
             });
         });
-    }
+    },
+
+    async search(categorie, mensualite, prix_min, prix_max) {
+        let results =  await ArticleRepository.search(categorie, mensualite, prix_min, prix_max);
+        return results.map(function(article) {
+            return ArticleRepository.toObject(article)
+        });
+    },
 };

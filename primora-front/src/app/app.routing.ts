@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     { path: 'article/:id', component: ArticleDetailComponent} ,
     { path: 'simulation', component: SimulationCreditComponent },
     { path: 'banque', component: RenseignementBanqueComponent },
-    { path: 'result', component: PageResultComponent },
+    { path: 'result/:data', component: PageResultComponent },
     { path: 'fiche', component: PageFicheArticleComponent },
     { path: 'ajouter', component: PageAddArticleComponent },
 
@@ -33,14 +33,14 @@ const appRoutes: Routes = [
     //   data: { title: 'Heroes List' }
     // }
   ];
-  
+
   @NgModule({
     imports: [
       RouterModule.forRoot(
         appRoutes,
         { enableTracing: true } // <-- debugging purposes only
       ),
-      
+
       // other imports here
     ],
     exports: [

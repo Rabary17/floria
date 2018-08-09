@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import {Observable} from "rxjs/index";
+import { config } from '../config';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,11 @@ export class HttpService {
     })
   }
 
-  get(url:string): Promise<any> {
-    return new Promise((resolv, reject) => {
-      this.http.get(url)
-        .toPromise()
-        .then(res => {
-          resolv(res);
-        });
-    });
+  // TODO gestion centralisé des erreurs ici
+  // TODO centralisation jwt token
+
+  get(url:string): Observable<any> {
+    return this.http.get(config.url + url);
   }
 
   post(url:string, data:object) {

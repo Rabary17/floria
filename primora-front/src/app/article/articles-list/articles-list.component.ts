@@ -1,27 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-//import {HttpService} from "../../../services/http.service";
-import { HttpClient } from '@angular/common/http';
+import {HttpService} from "../../../services/http.service";
+import { ArticleService } from '../../../services/article.service';
 import { Article } from '../../../models/article';
 
 @Component({
   selector: 'app-articles-list',
-  inputs: ['apiurl'],
+  inputs: ['list'],
   templateUrl: './articles-list.component.html',
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticlesListComponent implements OnInit {
   public listeArticles: Array<Article>;
-  public apiurl: string;
+  public list: string;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpService,
+    private articleservice: ArticleService
+  ) {
     this.listeArticles = [];
   }
 
   ngOnInit() {
-    console.log('article list component'+this.apiurl);
-    // this.http.get(this.apiurl).then(listeArticles => {
-    //   this.listeArticles = <Array<Article>> listeArticles.items;
-    // });
+    const service = this.list === 'latest'?
+      this.articleservice.getArticlesLastest():
+      this.articleservice.getArticlesLastest();
+
+    service.subscribe(articles => {
+        this.listeArticles = articles.items;
+      });
   }
 
 }
