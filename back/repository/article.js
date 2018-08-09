@@ -30,7 +30,7 @@ module.exports = {
         );
     },
     async findByUuid(uuid) {
-        const article = await Db.query("SELECT * FROM articles WHERE uuid = ?", [uuid]);
+        const article = await Db.queryOne("SELECT * FROM articles WHERE uuid = ?", [uuid]);
         if(article.length === 0) throw new ClientException.NotFoundException();
         return this.toObject(article);
     },
@@ -40,10 +40,10 @@ module.exports = {
                 SELECT * 
                 FROM articles 
                 WHERE categorie = ?
-                ORDER BY date_insertion
-                LIMIT 5
+                ORDER BY date_insertion DESC
+                LIMIT 10
             `, 
-            [categoryUuid]
+            [ categoryUuid ]
         );
     }
 };

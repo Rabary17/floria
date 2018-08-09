@@ -9,7 +9,7 @@ module.exports = {
         return cat;
     },
     async findByUuid(uuid) {
-        const category = await Db.query("SELECT * FROM categories WHERE uuid = ?", [uuid]);
+        const category = await Db.queryOne("SELECT * FROM categories WHERE uuid = ?", [uuid]);
         if(category.length === 0) throw new ClientException.NotFoundException();
         return this.toObject(category);
     },

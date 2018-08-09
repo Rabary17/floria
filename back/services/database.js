@@ -21,6 +21,7 @@ class Mysql {
         return mysql.escape(str);
     }
 
+    // TODO remove this method
     query(sql, params) {
         return new Promise((resolve, reject) => {
             this.pool.query(sql, params, function (error, rows, fields) {
@@ -44,6 +45,15 @@ class Mysql {
                     return false;
                 }
                 resolve(rows);
+            });
+        });
+    }
+
+    queryOne(sql, params) {
+        return new Promise((resolve, reject) => {
+            this.queryAll(sql, params).then(rows =>  {
+                if(typeof rows !== 'undefined' && 0 in rows) resolve(rows[0]);
+                else reject(rows);
             });
         });
     }

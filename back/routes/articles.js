@@ -12,13 +12,14 @@ Router.get('/pinned', async function(req, res, next) {
     }
 });
 
+
 Router.get('/latest', async function(req, res, next) {
-    try {
+    //try {
         const articles = await Articles.getLatest();
-        res.status(200).json(articles);
-    } catch(e) {
-        return Response.sendError(res, e);
-    }
+        //res.status(200).json(articles);
+    //} catch(e) {
+        //return Response.sendError(res, e);
+    //}
 });
 
 module.exports = Router;
