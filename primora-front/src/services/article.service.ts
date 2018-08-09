@@ -1,47 +1,31 @@
 import { Injectable } from '@angular/core';
-//import { HttpService } from './http.service';
 import { map } from 'rxjs/operators';
-import {config} from './config';
-import { HttpClient } from '@angular/common/http';
-
+import {HttpService} from './http.service';
 
 @Injectable({
     providedIn: 'root'
   })
 export class ArticleService{
-	
-    public url;
-
 	constructor(
-		private _http: HttpClient
+		private http: HttpService
 	){
-       this.url = config.url;
+
 	}
 
 	getArticlesPinned(){
-		//let params = "authorization="+token;
-		//const params = `authorization=${token}`;
-		//const header = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
-		
-		return this._http.get(`${this.url}/articles/pinned`)
-                         .pipe(map(res=>res));
+		return this.http
+      .get('/articles/pinned')
+      .pipe(map(res=>res));
 	}
 
-	getArticlesLast(){
-		//let params = "authorization="+token;
-		//const params = `authorization=${token}`;
-		//const header = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
-		
-		return this._http.get(`${this.url}/articles/latest`)
-                         .pipe(map(res=>res));
+	getArticlesLastest(){
+		return this.http
+      .get('/articles/latest');
 	}
 
 	getArticlesDetails(id){
-		//let params = "authorization="+token;
-		//const params = `authorization=${token}`;
-		//const header = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
-		
-		return this._http.get(`${this.url}/article/${id}`)
-                         .pipe(map(res=>res));
+		return this.http
+      .get('/article/${id}')
+      .pipe(map(res=>res));
 	}
 }

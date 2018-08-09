@@ -7,25 +7,11 @@ import {ArticleService} from '../../services/article.service';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
-  public articleLast;
-  public articlePinned;
-
-  constructor(private service: ArticleService) {
-    this.articlePinned = [];
+  constructor() {
   }
 
   ngOnInit() {
-    this.getAllArticlePinned();
+
   }
-	getAllArticlePinned(){
-			this.service.getArticlesPinned().subscribe(
-				response => {
-				  this.articlePinned = response;
-				},
-				error => {
-					console.log(<any>error);
-				}
-			);
-	}
 
 }

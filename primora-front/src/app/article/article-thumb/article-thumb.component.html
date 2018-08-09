@@ -1,18 +1,25 @@
-<div>
-    <img [src]="article.image">
-    <div>
-      id : {{ article.uuid }}
-      A partir de {{ article.mensualite }} Ar/mois
+<div
+  class="article"
+  [routerLink]="['/article' , article.uuid]"
+  role="button"
+  tabindex="0"
+>
+    <div *ngIf="article.image" class="text-center">
+      <img [src]="article.image" />
+    </div>
+    <div *ngIf="!article.image" class="text-center">
+      <div class="border-100 blank-image"></div>
+    </div>
+    <div class="text-center font-size-08 article-mensualite">
+      A partir de
+      <span class="font-size-16 mensualite">{{ article.mensualite }} Ar</span>
+      / mois
+    </div>
+    <div class="text-center font-size-08 article-cash">
+      {{ article.prix_cash }} Ar
     </div>
     <div>
-      <h2>{{ article.prix_cash }} Ar</h2>
-    </div>
-    <div>
-      <div>
-        <span>{{ article.categorie }}</span>
-        <span>{{ article.lieu }}</span>
-      </div>
-      <span><h2><a [routerLink]="['/article' , article.uuid]">{{ article.titre }}</a></h2></span>
-      <p>{{ article.subtitle }}</p>
+      <div class="text-center font-size-12 article-titre">{{ article.titre }}</div>
+      <div class="text-center font-size-08 article-description">{{ article.description }}</div>
     </div>
 </div>
