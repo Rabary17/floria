@@ -1,28 +1,35 @@
--- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: primora
--- ------------------------------------------------------
--- Server version	5.7.23-0ubuntu0.16.04.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  jeu. 09 août 2018 à 07:33
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `articles`
+-- Base de données :  `primora_bd`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `articles`
 --
 
 DROP TABLE IF EXISTS `articles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `articles` (
+CREATE TABLE IF NOT EXISTS `articles` (
   `uuid` char(36) NOT NULL,
   `categorie` char(36) NOT NULL,
   `date_insertion` datetime NOT NULL,
@@ -36,43 +43,40 @@ CREATE TABLE `articles` (
   `adresse` varchar(255) NOT NULL,
   `utilisateur_id` char(36) DEFAULT NULL,
   `fiche` json DEFAULT NULL,
+  `pinned` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uuid`),
   KEY `utilisateur_id` (`utilisateur_id`),
   KEY `categorie_id` (`categorie`),
-  KEY `articles_currencies_FK` (`currency`),
-  CONSTRAINT `articles_currencies_FK` FOREIGN KEY (`currency`) REFERENCES `currencies` (`code`),
-  CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`),
-  CONSTRAINT `articles_ibfk_3` FOREIGN KEY (`categorie`) REFERENCES `categories` (`uuid`)
+  KEY `articles_currencies_FK` (`currency`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `articles`
+-- Déchargement des données de la table `articles`
 --
 
-LOCK TABLES `articles` WRITE;
-/*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` VALUES ('280f6da1-9a26-11e8-a0ed-0024d7ada560','128628c0-9a15-11e8-a0ed-0024d7ada560','2018-08-07 12:42:11','SEAT','......',12590,194,'MGA',NULL,'Tana','Adresse',NULL,'{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}'),('a39f5b1c-9a26-11e8-a0ed-0024d7ada560','128628c0-9a15-11e8-a0ed-0024d7ada560','2018-08-07 12:45:38','SEAT','......',12590,194,'MGA',NULL,'Tana','Adresse',NULL,'{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}'),('d4943e4e-9a26-11e8-a0ed-0024d7ada560','128628c0-9a15-11e8-a0ed-0024d7ada560','2018-08-07 12:47:00','SEAT','......',12590,194,'MGA',NULL,'Tana','Adresse',NULL,'{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}'),('decd2eb3-9a26-11e8-a0ed-0024d7ada560','128628c0-9a15-11e8-a0ed-0024d7ada560','2018-08-07 12:47:17','SEAT','......',12590,194,'MGA',NULL,'Tana','Adresse',NULL,'{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}'),('e87df9b7-9a26-11e8-a0ed-0024d7ada560','128628c0-9a15-11e8-a0ed-0024d7ada560','2018-08-07 12:47:33','SEAT','......',12590,194,'MGA',NULL,'Tana','Adresse',NULL,'{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}');
-/*!40000 ALTER TABLE `articles` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `articles` (`uuid`, `categorie`, `date_insertion`, `titre`, `description`, `prix_cash`, `mensualite`, `currency`, `location_geo`, `lieu`, `adresse`, `utilisateur_id`, `fiche`, `pinned`) VALUES
+('280f6da1-9a26-11e8-a0ed-0024d7ada560', '128628c0-9a15-11e8-a0ed-0024d7ada560', '2018-08-07 12:42:11', 'SEAT', '......', 12590, 194, 'MGA', NULL, 'Tana', 'Adresse', NULL, '{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}', 0),
+('a39f5b1c-9a26-11e8-a0ed-0024d7ada560', '128628c0-9a15-11e8-a0ed-0024d7ada560', '2018-08-07 12:45:38', 'SEAT', '......', 12590, 194, 'MGA', NULL, 'Tana', 'Adresse', NULL, '{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}', 0),
+('d4943e4e-9a26-11e8-a0ed-0024d7ada560', '128628c0-9a15-11e8-a0ed-0024d7ada560', '2018-08-07 12:47:00', 'SEAT', '......', 12590, 194, 'MGA', NULL, 'Tana', 'Adresse', NULL, '{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}', 0),
+('decd2eb3-9a26-11e8-a0ed-0024d7ada560', '128628c0-9a15-11e8-a0ed-0024d7ada560', '2018-08-07 12:47:17', 'SEAT', '......', 12590, 194, 'MGA', NULL, 'Tana', 'Adresse', NULL, '{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}', 0),
+('e87df9b7-9a26-11e8-a0ed-0024d7ada560', '128628c0-9a15-11e8-a0ed-0024d7ada560', '2018-08-07 12:47:33', 'SEAT', '......', 12590, 194, 'MGA', NULL, 'Tana', 'Adresse', NULL, '{\"annee\": \"2015\", \"porte\": \"5\", \"marque\": \"Toyota\", \"modele\": \"Aygo\", \"places\": \"4\", \"couleur\": \"Gris\", \"version\": \"1.0 VVT-i 69ch x-play 5p\", \"vitesse\": \"5 rapports\", \"carburant\": \"Essence\", \"reference\": \"24560418\", \"carrosserie\": \"Berline\", \"kilometrage\": \"37 789 km\", \"emission_co2\": \"95 g/km\", \"transmission\": \"Manuelle\", \"premiere_main\": \"Oui\", \"puissance_reel\": \"69\", \"puissance_fiscal\": \"4\", \"mise_en_circulation\": \"18/06/2015\"}', 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structure de la table `categories`
 --
 
 DROP TABLE IF EXISTS `categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categories` (
+CREATE TABLE IF NOT EXISTS `categories` (
   `uuid` char(36) NOT NULL,
   `nom` json NOT NULL,
   `fiche` json NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categories`
+-- Déchargement des données de la table `categories`
 --
 
 INSERT INTO `categories` (`uuid`, `nom`, `fiche`) VALUES
@@ -83,13 +87,11 @@ INSERT INTO `categories` (`uuid`, `nom`, `fiche`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commandes`
+-- Structure de la table `commandes`
 --
 
 DROP TABLE IF EXISTS `commandes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `commandes` (
+CREATE TABLE IF NOT EXISTS `commandes` (
   `uuid` char(36) NOT NULL,
   `utilisateur_id` char(36) DEFAULT NULL,
   `article_id` char(36) NOT NULL,
@@ -97,111 +99,71 @@ CREATE TABLE `commandes` (
   `date` date NOT NULL,
   PRIMARY KEY (`uuid`),
   KEY `modalite_id` (`modalite_id`),
-  KEY `utilisateur_id` (`utilisateur_id`),
-  CONSTRAINT `commandes_ibfk_1` FOREIGN KEY (`modalite_id`) REFERENCES `modalites` (`uuid`),
-  CONSTRAINT `commandes_ibfk_2` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`)
+  KEY `utilisateur_id` (`utilisateur_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `commandes`
---
-
-LOCK TABLES `commandes` WRITE;
-/*!40000 ALTER TABLE `commandes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `commandes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `comments`
+-- Structure de la table `comments`
 --
 
 DROP TABLE IF EXISTS `comments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `comments` (
+CREATE TABLE IF NOT EXISTS `comments` (
   `uuid` char(36) NOT NULL,
   `utilisateur_id` char(36) DEFAULT NULL,
   `article_id` char(36) NOT NULL,
   `commentaire` text NOT NULL,
   PRIMARY KEY (`uuid`),
   KEY `utilisateur_id` (`utilisateur_id`),
-  KEY `article_id` (`article_id`),
-  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`),
-  CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`article_id`) REFERENCES `articles` (`uuid`)
+  KEY `article_id` (`article_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `comments`
---
-
-LOCK TABLES `comments` WRITE;
-/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `currencies`
+-- Structure de la table `currencies`
 --
 
 DROP TABLE IF EXISTS `currencies`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `currencies` (
+CREATE TABLE IF NOT EXISTS `currencies` (
   `code` char(5) NOT NULL,
   `code_long` varchar(50) NOT NULL,
   PRIMARY KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `currencies`
+-- Déchargement des données de la table `currencies`
 --
 
-LOCK TABLES `currencies` WRITE;
-/*!40000 ALTER TABLE `currencies` DISABLE KEYS */;
-INSERT INTO `currencies` VALUES ('MGA','Ariary');
-/*!40000 ALTER TABLE `currencies` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `currencies` (`code`, `code_long`) VALUES
+('MGA', 'Ariary');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `likes`
+-- Structure de la table `likes`
 --
 
 DROP TABLE IF EXISTS `likes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `likes` (
+CREATE TABLE IF NOT EXISTS `likes` (
   `uuid` char(36) NOT NULL,
   `utilisateur_id` char(36) DEFAULT NULL,
   `article_id` char(36) NOT NULL,
   `type` varchar(50) NOT NULL,
   PRIMARY KEY (`uuid`),
   KEY `article_id` (`article_id`),
-  KEY `utilisateur_id` (`utilisateur_id`),
-  CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`uuid`),
-  CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`)
+  KEY `utilisateur_id` (`utilisateur_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `likes`
---
-
-LOCK TABLES `likes` WRITE;
-/*!40000 ALTER TABLE `likes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `likes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `medias`
+-- Structure de la table `medias`
 --
 
 DROP TABLE IF EXISTS `medias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `medias` (
+CREATE TABLE IF NOT EXISTS `medias` (
   `uuid` char(36) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `photo` varchar(100) NOT NULL,
@@ -209,74 +171,44 @@ CREATE TABLE `medias` (
   `description` text NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `medias`
---
-
-LOCK TABLES `medias` WRITE;
-/*!40000 ALTER TABLE `medias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `medias` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `modalites`
+-- Structure de la table `modalites`
 --
 
 DROP TABLE IF EXISTS `modalites`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `modalites` (
+CREATE TABLE IF NOT EXISTS `modalites` (
   `uuid` char(36) NOT NULL,
   `code` varchar(50) NOT NULL,
   `libelle` varchar(100) NOT NULL,
   `mode` varchar(50) NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `modalites`
---
-
-LOCK TABLES `modalites` WRITE;
-/*!40000 ALTER TABLE `modalites` DISABLE KEYS */;
-/*!40000 ALTER TABLE `modalites` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `roles`
+-- Structure de la table `roles`
 --
 
 DROP TABLE IF EXISTS `roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `roles` (
+CREATE TABLE IF NOT EXISTS `roles` (
   `uuid` char(36) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `code` varchar(50) NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `roles`
---
-
-LOCK TABLES `roles` WRITE;
-/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `utilisateurs`
+-- Structure de la table `utilisateurs`
 --
 
 DROP TABLE IF EXISTS `utilisateurs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `utilisateurs` (
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `uuid` char(36) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
@@ -288,27 +220,49 @@ CREATE TABLE `utilisateurs` (
   `mdp` varchar(150) NOT NULL,
   `role_id` char(36) NOT NULL,
   PRIMARY KEY (`uuid`),
-  KEY `role_id` (`role_id`),
-  CONSTRAINT `utilisateurs_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`uuid`)
+  KEY `role_id` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `utilisateurs`
+-- Contraintes pour les tables déchargées
 --
 
-LOCK TABLES `utilisateurs` WRITE;
-/*!40000 ALTER TABLE `utilisateurs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `utilisateurs` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+--
+-- Contraintes pour la table `articles`
+--
+ALTER TABLE `articles`
+  ADD CONSTRAINT `articles_currencies_FK` FOREIGN KEY (`currency`) REFERENCES `currencies` (`code`),
+  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`),
+  ADD CONSTRAINT `articles_ibfk_3` FOREIGN KEY (`categorie`) REFERENCES `categories` (`uuid`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Contraintes pour la table `commandes`
+--
+ALTER TABLE `commandes`
+  ADD CONSTRAINT `commandes_ibfk_1` FOREIGN KEY (`modalite_id`) REFERENCES `modalites` (`uuid`),
+  ADD CONSTRAINT `commandes_ibfk_2` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`);
+
+--
+-- Contraintes pour la table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`article_id`) REFERENCES `articles` (`uuid`);
+
+--
+-- Contraintes pour la table `likes`
+--
+ALTER TABLE `likes`
+  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`uuid`),
+  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`uuid`);
+
+--
+-- Contraintes pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD CONSTRAINT `utilisateurs_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`uuid`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-08-08  8:28:29
