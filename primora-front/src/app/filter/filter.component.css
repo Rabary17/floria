@@ -14,7 +14,7 @@
   width: calc(50% - 2em);
 }
 .margin-05 {
-  margin: 0.5em;
+  margin: 0.5em 0 0.5em 0;
 }
 .label-prix {
   display: block;
@@ -28,10 +28,15 @@
     display: inline-block;
     width: calc(50% - 1em);
   }
+
+  .margin-05 {
+    margin: 0.5em;
+  }
 }
 @media screen and (max-width: 384px) {
   .block50 {
     display: block;
-    width: calc(100% - 2em);
+    /*width: calc(100% - 2em);*/
+    width: calc(100%);
   }
 }
