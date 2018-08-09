@@ -4,14 +4,18 @@ const ClientException = require('../exceptions/ClientException');
 module.exports = {
     toObject(article) {
         const art = {...article};
-        art.fiche = JSON.parse(art.fiche);
+        try {
+            art.fiche = JSON.parse(art.fiche);
+        } catch(e) {
+            // raf
+        }
         return art;
     },
     async insert(article) {
         return await Db.query(
             `INSERT INTO articles VALUES (
                 uuid(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-            )`, 
+            )`,
             [
                 // uuid
                 article.categorie_uuid, //categorie
@@ -35,16 +39,16 @@ module.exports = {
         return this.toObject(article);
     },
     findLatestByCategorie(categoryUuid) {
-        return Db.query(
+        return Db.queryAll(
             `
                 SELECT * 
                 FROM articles 
                 WHERE categorie = ?
                 ORDER BY date_insertion DESC
                 LIMIT 10
-            `, 
+            `,
             [ categoryUuid ]
         );
     }
-    
+
 };

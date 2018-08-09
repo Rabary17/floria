@@ -5,49 +5,34 @@ const CategorieRepository = require('../repository/category');
 
 module.exports = {
     getPinned() {
-        return new Promise((resolv, reject) => {
+        return new Promise((resolve, reject) => {
             fs.readFile('samples/pinned.json', 'utf8', function (err, data) {
                 if (err) throw err;
                 obj = JSON.parse(data);
-                resolv(obj);
+                resolve(obj);
             });
         });
     },
 
     async getLatest() {
-
         const promises = [];
         const categories = await CategorieRepository.findAll();
-        const cat_uuid = [];
-        for(let i =0; i < categories.length; i++) {
-            categorie_uuid = categories[i].uuid;
-            cat_uuid.push(categorie_uuid);
-        }
-        cat_uuid.forEach(categorie => {
+        categories.forEach(categorie => {
             promises.push(
-                ArticleRepository.findLatestByCategorie(categorie).then(res => {
-                    return res;
-                })
+                ArticleRepository.findLatestByCategorie(categorie.uuid)
             );
         });
 
-        var article = Promise.all(promises, (res) => {
-            resolv(res);
+        return new Promise((resolve, reject) => {
+            Promise.all(promises).then(res => {
+                let result = [];
+                res.forEach(item => {
+                    result = result.concat(
+                        item.map(article => ArticleRepository.toObject(article))
+                    );
+                });
+                resolve(result);
+            });
         });
-        /*
-        ArticleRepository.findLatestByCategorie('128628c0-9a15-11e8-a0ed-0024d7ada560').then(res => {
-            console.log(res);
-        });
-        */
-
-        return article;
-
-        // return new Promise((resolv, reject) => {
-        //     fs.readFile('samples/latest.json', 'utf8', function (err, data) {
-        //         if (err) throw err;
-        //         obj = JSON.parse(data);
-        //         resolv(obj);
-        //     });
-        // });
     }
 };
