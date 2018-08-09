@@ -5,7 +5,7 @@ const Articles = require('../services/articles');
 
 Router.get('/pinned', async function(req, res, next) {
     try {
-        const articles = await Articles.getPinned();
+        const articles = await Articles.getPinned(1);
         res.status(200).json(articles);
     } catch(e) {
         return Response.sendError(res, e);
