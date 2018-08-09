@@ -1,43 +1,42 @@
 <div class="filter">
-  <div>
-      <select >
-        <option value="">Type de produit</option>
-        <option value="128628c0-9a15-11e8-a0ed-0024d7ada560">Voiture</option>
-        <option value="996324e6-9a37-11e8-9aac-402cf41335ad">Maison</option>
-        <option value="c6e5a3c0-9a33-11e8-9aac-402cf41335ad">Terrain</option>
-      </select>
-  </div>
-  <div>
-    <select>
-      <option value="">Mensualité</option>
-      <option>1 000 000 Ar/mois</option>
-      <option>2 000 000 Ar/mois</option>
-      <option>3 000 000 Ar/mois</option>
+  <header>
+    Recherchez une annonce
+  </header>
+  <div class="filter-item">
+    <select [(ngModel)]="formData.categorie">
+      <option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</option>
     </select>
   </div>
-  <div>
-    <select>
-      <option value="">Durée</option>
-      <option>1 mois</option>
-      <option>2 mois</option>
-      <option>3 mois</option>
+  <div class="filter-item">
+    <select [(ngModel)]="formData.mensualite">
+      <option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</option>
     </select>
   </div>
-  <div>
-      <label>PRIX</label>
-      <div>
+  <div class="filter-item">
+    <select [(ngModel)]="formData.duree">
+      <option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</option>
+    </select>
+  </div>
+  <div class="filter-item">
+      <label class="label-prix">Prix</label>
+      <div class="block50 margin-05">
         <select>
+          <option value="">De</option>
           <option>3 000 000</option>
           <option>4 000 000</option>
           <option>5 000 000</option>
         </select>
       </div>
-      <div>
+      <div class="block50 margin-05">
         <select>
+          <option value="">A</option>
           <option>6 000 000</option>
           <option>7 000 000</option>
-          <option>8 000 0003</option>
+          <option>8 000 000</option>
         </select>
       </div>
+  </div>
+  <div class="recherche-button-container">
+    <button (click)="search()">Rechercher</button>
   </div>
 </div>

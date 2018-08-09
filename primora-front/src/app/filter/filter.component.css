@@ -1,7 +1,42 @@
 .filter {
-  padding: 15px;
-  margin: 0;
+  margin: 15px;
   border: 1px solid #e6e6e6;
   border-bottom: 3px solid #2e88c2;
   background-color: #fff;
+}
+.filter header {
+  background-color: #09242e;
+  border-radius: 4px 4px 0 0;
+  color: #fff;
+  padding: 1em;
+}
+.filter-item {
+  margin: 0.5em;
+}
+
+.block50 {
+  display: inline-block;
+  width: calc(50% - 2em);
+}
+.margin-05 {
+  margin: 0.5em;
+}
+.label-prix {
+  display: block;
+  font-size: 0.8em;
+}
+.recherche-button-container {
+  text-align: center;
+}
+@media screen and (min-width: 384px) {
+  .filter-item {
+    display: inline-block;
+    width: calc(50% - 1em);
+  }
+}
+@media screen and (max-width: 384px) {
+  .block50 {
+    display: block;
+    width: calc(100% - 2em);
+  }
 }
