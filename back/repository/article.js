@@ -49,6 +49,17 @@ module.exports = {
             `,
             [ categoryUuid ]
         );
+    },
+    findPinned(pinnedValue) {
+        return Db.queryAll(
+            `
+                SELECT * 
+                FROM articles 
+                WHERE pinned = ?
+                ORDER BY date_insertion DESC
+                LIMIT 10
+            `,
+            [ pinnedValue ]
+        );
     }
-
 };

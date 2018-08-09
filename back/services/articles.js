@@ -4,13 +4,10 @@ const ArticleRepository = require('../repository/article');
 const CategorieRepository = require('../repository/category');
 
 module.exports = {
-    getPinned() {
-        return new Promise((resolve, reject) => {
-            fs.readFile('samples/pinned.json', 'utf8', function (err, data) {
-                if (err) throw err;
-                obj = JSON.parse(data);
-                resolve(obj);
-            });
+    async getPinned() {
+        let articles =  await ArticleRepository.findPinned(0);
+        return articles.map(function(article) {
+            return ArticleRepository.toObject(article)
         });
     },
 
