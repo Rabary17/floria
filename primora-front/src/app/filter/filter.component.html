@@ -1,4 +1,7 @@
 <div class="filter">
+  <header>
+    Recherchez une annonce
+  </header>
   <div class="filter-item">
     <select [(ngModel)]="formData.categorie">
       <option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</option>
