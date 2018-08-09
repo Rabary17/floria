@@ -31,20 +31,4 @@ Router.get('/:categorie/:mensualite/:prix_min/:prix_max', async function(req, re
     }
 });
 
-Router.get('/search/:categorie/:mensualite/:prix_min/:prix_max', async function(req, res, next){
-    let params = {
-                  'cat' : req.params.categorie,
-                  'men' : req.params.mensualite,
-                  'prix_min' : req.params.prix_min,
-                  'prix_max': req.params.prix_max 
-                };
-    try {
-        const article = await ArticleRepository.search(params);
-        let results = res.status(200).json(article);
-        return results.map( result => ArticleRepository.toObject(result));
-        console.log(article);
-    } catch(e) {
-        return Response.sendError(res, e);
-    }
-}),
 module.exports = Router;

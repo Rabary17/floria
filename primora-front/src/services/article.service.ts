@@ -28,4 +28,9 @@ export class ArticleService{
       .get('/article/${id}')
       .pipe(map(res=>res));
 	}
+
+	getArticlesBy(data) {
+    return this.http
+      .get(`/articles/search/${data.categorie}/${data.mensualite}/${data.prix_min}/${data.prix_max}`);
+  }
 }
