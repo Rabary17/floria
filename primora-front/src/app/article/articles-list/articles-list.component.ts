@@ -5,13 +5,14 @@ import { Article } from '../../../models/article';
 
 @Component({
   selector: 'app-articles-list',
-  inputs: ['list'],
+  inputs: ['list', 'apiurl'],
   templateUrl: './articles-list.component.html',
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticlesListComponent implements OnInit {
   public listeArticles: Array<Article>;
   public list: string;
+  public apiurl: string;
 
   constructor(
     private http: HttpService,
@@ -21,13 +22,21 @@ export class ArticlesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const service = this.list === 'latest'?
-      this.articleservice.getArticlesLastest():
-      this.articleservice.getArticlesLastest();
+    this.load();
+  }
 
+  load() {
+    let service = null;
+    if(this.list === 'latest') {
+      service = this.articleservice.getArticlesLastest()
+    } else if(this.list === 'pinned') {
+      service = this.articleservice.getArticlesLastest();
+    } else if(this.list === 'custom') {
+      service = this.articleservice.getArticlesFromUrl(this.apiurl);
+    }
     service.subscribe(articles => {
-        this.listeArticles = articles.items;
-      });
+      this.listeArticles = articles.items;
+    });
   }
 
 }
