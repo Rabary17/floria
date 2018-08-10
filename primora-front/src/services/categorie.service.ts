@@ -15,5 +15,7 @@ export class CategorieService {
   getAll(){
     return this.http.get('/categories');
   }
-
+  save(data) {
+    return this.http.post('/article', data);
+  }
 }
