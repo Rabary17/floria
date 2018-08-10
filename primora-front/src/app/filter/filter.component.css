@@ -53,13 +53,6 @@
     margin: 0.5em;
   }
 }
-<<<<<<< HEAD
-@media screen and (max-width: 384px) {
-  .block50 {
-    display: block;
-    /*width: calc(100% - 2em);*/
-    width: calc(100%);
-=======
 @media (min-width:641px)  {
   .filter-item {
     display: inline-block;
@@ -88,6 +81,5 @@
   .filter-item {
     display: inline-block;
     width: calc(16.666% - 1em);
->>>>>>> 7cadbbccc445a06ecf35130092e3e09e77f8dae3
   }
 }
