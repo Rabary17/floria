@@ -21,7 +21,6 @@ export class ArticleService{
 	}
 
   getArticlesFromUrl(url) {
-	  console.log(url);
     return this.http
       .get(url);
   }

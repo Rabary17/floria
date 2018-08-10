@@ -70,11 +70,9 @@ export class FilterComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-
   }
 
   ngOnInit() {
-
   }
 
   search() {

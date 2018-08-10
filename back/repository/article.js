@@ -85,6 +85,8 @@ module.exports = {
             sql += ` AND mensualite = ? `;
             parameters.push(params.mensualite);
         }
+        console.log(params);
+        console.log(sql);
         sql += ` LIMIT 20 `;
         return Db.queryAll(sql, parameters);
     }
