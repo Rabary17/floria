@@ -33,7 +33,9 @@ export class ArticleAddComponent implements OnInit {
   }
 
   add() {
-    console.log(this.formData);
+    this.categorieService.save(this.formData).subscribe(result => {
+      console.log(result);
+    });
   }
 
   changeCat(categorieUid) {

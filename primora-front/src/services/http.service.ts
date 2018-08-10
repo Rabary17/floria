@@ -25,7 +25,7 @@ export class HttpService {
   }
 
   post(url:string, data:object) {
-    return this.http.post<object>(url, data, {
+    return this.http.post<object>(config.url + url, data, {
       headers: this.headers
     });
   }

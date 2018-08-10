@@ -12,24 +12,28 @@ module.exports = {
         return art;
     },
     async insert(article) {
+        const mensualite = typeof article.mensualite === 'undefined' ? null : Number(article.mensualite);
+        const prixCash = typeof article.prix_cash === 'undefined' ? null : Number(article.prix_cash);
+
         return await Db.query(
             `INSERT INTO articles VALUES (
-                uuid(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                uuid(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
                 // uuid
-                article.categorie_uuid, //categorie
-                new Date, //date_insertion
+                article.categorie, //categorie
+                new Date(), //date_insertion
                 article.titre, // titre
                 article.description, //description
-                article.prix_cash, //prix_cash
-                article.mensualite, //mensualite
-                article.currency, //currency
+                prixCash, //prix_cash
+                mensualite, //mensualite
+                'MGA', //currency
                 null, //location_geo
                 article.lieu, //lieu
                 article.adresse, //adresse
                 null, //utilisateur_id, 
-                JSON.stringify(article.informations) // informations
+                JSON.stringify(article.fiche), // informations
+                0, // pinned
             ]
         );
     },
@@ -85,8 +89,6 @@ module.exports = {
             sql += ` AND mensualite = ? `;
             parameters.push(params.mensualite);
         }
-        console.log(params);
-        console.log(sql);
         sql += ` LIMIT 20 `;
         return Db.queryAll(sql, parameters);
     }

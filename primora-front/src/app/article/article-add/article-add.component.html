@@ -45,11 +45,12 @@
            [(ngModel)]="formData.adresse" />
   </div>
   <fieldset>
-    <legend>Détail</legend>
+    <legend>Détails</legend>
     <div>
       <div
-        *ngFor="let ficheItem of fiche">
+        *ngFor="let ficheItem of fiche" class="article-fiche">
         <div class="article-item">
+          <label>{{ ficheItem.label.fr }}</label>
           <input [type]="ficheItem.type"
                  [placeholder]="ficheItem.label.fr"
                  [(ngModel)]="formData.fiche[ficheItem.key]" />
@@ -58,7 +59,7 @@
       </div>
     </div>
   </fieldset>
-  <div>
-    <button class="pointer" (click)="add()">Rechercher</button>
+  <div class="text-center">
+    <button class="pointer" (click)="add()">Ajouter</button>
   </div>
 </div>
