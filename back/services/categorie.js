@@ -1,15 +1,8 @@
-const Db = require('./database');
-const fs = require('fs');
+const CategoryRepository = require('../repository/category');
 
 module.exports = {
-    getCategorie() {
-        return new Promise((resolv, reject) => {
-            fs.readFile('samples/categorie.json', 'utf8', function (err, data) {
-                if (err) throw err;
-                obj = JSON.parse(data);
-                resolv(obj);
-            });
-        });
+    async getAll() {
+        return await CategoryRepository.findAll();
     },
 
 };

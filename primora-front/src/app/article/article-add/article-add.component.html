@@ -1,44 +1,64 @@
-<div>
+<div class="article">
   <h2>Ajouter un article</h2>
-  <form>
-    <ul>
-      <li>
-          <label>titre</label>
-          <input type="text" name="titre">
-      </li>
-      <li>
-          <label>description</label>
-          <input type="textarea" name="description">
-      </li>
-      <li>
-          <label>date</label>
-          <input type="datetime" name="date">
-      </li>
-      <li>
-          <label>prix cash</label>
-          <input type="number" name="prix_cash">
-      </li>
-      <li>
-          <label>currency</label>
-          <input type="text" name="currency">
-      </li>
-      <li>
-          <label>lieu</label>
-          <input type="text" name="lieu">
-      </li>
-      <li>
-          <label>media</label>
-          <input type="text" name="media">
-      </li>
-      <li>
-          <label>categorie</label>
-          <input type="text" name="categorie">
-      </li>
-      <li>
-          <label>mensualite</label>
-          <input type="text" name="mensualite">
-      </li>
-    </ul>
-  </form>
+  <div class="article-item">
+    <label>Catégorie</label>
+    <select [(ngModel)]="formData.categorie" (ngModelChange)="changeCat($event)">
+      <option *ngFor="let cat of categories" [value]="cat.uuid">{{ cat.nom.fr }}</option>
+    </select>
+  </div>
 
+  <hr />
+
+  <div class="article-item">
+    <label>Titre</label>
+    <input type="text"
+           name="titre"
+           placeholder="Titre"
+           [(ngModel)]="formData.titre" />
+  </div>
+  <div class="article-item">
+    <label>Description</label>
+    <input type="text"
+           name="description"
+           placeholder="Description"
+           [(ngModel)]="formData.description" />
+  </div>
+  <div class="article-item">
+    <label>Prix cash</label>
+    <input type="number"
+           name="prix_cash"
+           placeholder="Prix cash"
+           [(ngModel)]="formData.prix_cash" />
+  </div>
+  <div class="article-item">
+    <label>Lieu</label>
+    <input type="text"
+           name="lieu"
+           placeholder="Lieu"
+           [(ngModel)]="formData.lieu" />
+  </div>
+  <div class="article-item">
+    <label>Adresse</label>
+    <input type="text"
+           name="adresse"
+           placeholder="adresse"
+           [(ngModel)]="formData.adresse" />
+  </div>
+  <fieldset>
+    <legend>Détail</legend>
+    <div>
+      <div
+        *ngFor="let ficheItem of fiche">
+        <div class="article-item">
+          <input [type]="ficheItem.type"
+                 [placeholder]="ficheItem.label.fr"
+                 [(ngModel)]="formData.fiche[ficheItem.key]" />
+        </div>
+
+      </div>
+    </div>
+  </fieldset>
+  <div>
+    <button class="pointer" (click)="add()">Rechercher</button>
+  </div>
 </div>
