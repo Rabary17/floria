@@ -12,8 +12,7 @@ export class PageResultComponent implements OnInit {
   @ViewChild(ArticlesListComponent)
   private articleList: ArticlesListComponent;
 
-  data: object;
-  @Input() searchurl: string;
+  searchurl: string;
 
   constructor(
     private articleService: ArticleService,
@@ -38,7 +37,7 @@ export class PageResultComponent implements OnInit {
   search(data) {
     const params = btoa(JSON.stringify(data));
     this.searchurl = `/articles/search/${params}`;
-    this.articleList.load();
+    this.articleList.load(this.searchurl);
   }
 
 }

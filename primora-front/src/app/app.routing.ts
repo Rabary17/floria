@@ -26,12 +26,6 @@ const appRoutes: Routes = [
     { path: 'result/:data', component: PageResultComponent },
     { path: 'fiche', component: PageFicheArticleComponent },
     { path: 'ajouter', component: PageAddArticleComponent },
-
-    // {
-    //   path: 'heroes',
-    //   component: HeroListComponent,
-    //   data: { title: 'Heroes List' }
-    // }
   ];
 
   @NgModule({

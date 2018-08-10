@@ -1,4 +1,7 @@
 <div class="article-container text-center">
+  <!--header>
+    {{ listeArticles.length }} annonce(s)
+  </header-->
   <div class="article" *ngFor="let article of listeArticles">
     <app-article-thumb [article]="article"></app-article-thumb>
   </div>

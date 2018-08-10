@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategorieService } from '../../../services/categorie.service';
 
 @Component({
   selector: 'app-article-add',
@@ -6,10 +7,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-add.component.css']
 })
 export class ArticleAddComponent implements OnInit {
+  categories = [];
+  fiche = [];
 
-  constructor() { }
+  formData = {
+    titre: '',
+    description: '',
+    prix_cash: '',
+    lieu: '',
+    adresse: '',
+    categorie: '',
+    fiche: {}
+  };
+
+  constructor(
+    private categorieService: CategorieService
+  ) { }
 
   ngOnInit() {
+    this.categorieService.getAll().subscribe(categories => {
+      this.categories = categories.items;
+      this.formData.categorie = this.categories[0].uuid;
+      this.fiche = this.categories[0].fiche;
+    });
+  }
+
+  add() {
+    console.log(this.formData);
+  }
+
+  changeCat(categorieUid) {
+    const cat = this.categories.filter(item => item.uuid === categorieUid);
+    if(cat.length > 0) {
+      this.fiche = cat[0].fiche;
+      this.formData.fiche = {};
+    }
   }
 
 }

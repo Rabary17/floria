@@ -18,9 +18,9 @@
         <option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</option>
       </select>
     </div>
-    <div class="filter-item">
-        <label class="label-prix">Prix</label>
-        <div class="block50 margin-05">
+    <div class="filter-item filter-item-price text-left">
+        <div class="label-prix">Prix</div>
+        <div class="block50">
           <select [(ngModel)]="formData.prix_min">
             <option value="-">De</option>
             <option>3 000 000</option>
@@ -28,7 +28,7 @@
             <option>5 000 000</option>
           </select>
         </div>
-        <div class="block50 margin-05">
+        <div class="block50">
           <select [(ngModel)]="formData.prix_max">
             <option value="-">A</option>
             <option value="6000000">6 000 000</option>

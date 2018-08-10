@@ -6,6 +6,7 @@ const Config = require('./config.js');
 const RouteMain = require('./routes/main');
 const RouteArticle = require('./routes/article');
 const RouteArticles = require('./routes/articles');
+const RouteCategories = require('./routes/categorie');
 const Response = require('./services/response');
 
 // parse application/x-www-form-urlencoded
@@ -18,5 +19,6 @@ app.use(Response.apiHeaders);
 app.use('/api/', RouteMain);
 app.use('/api/article/', RouteArticle);
 app.use('/api/articles/', RouteArticles);
+app.use('/api/categories/', RouteCategories);
 
 server.listen(Config.serverPort);
