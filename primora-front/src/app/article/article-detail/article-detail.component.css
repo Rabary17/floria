@@ -1,0 +1,51 @@
+.article-detail {
+    padding: 15px;
+}
+
+.article-show-left img {
+    width: 100%;
+    margin-bottom: -4px;
+}
+
+.article-show-left h2 {
+    color: #00b8e6;
+}
+
+.traite, .price {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.traite {
+    background-color: #00b8e6;
+}
+
+.price {
+    background-color: #09242e;
+}
+
+/* TABLEAU */
+
+#caracteristique {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#caracteristique td, #caracteristique th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#caracteristique tr:nth-child(even){background-color: #f2f2f2;}
+
+#caracteristique tr:hover {background-color: #ddd;}
+
+#caracteristique th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #09242e;
+    color: white;
+}

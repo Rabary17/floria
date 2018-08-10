@@ -25,7 +25,7 @@
   width: calc(50% - 2em);
 }
 .margin-05 {
-  margin: 0.5em;
+  margin: 0.5em 0 0.5em 0;
 }
 .label-prix {
   font-size: 0.8em;
@@ -50,6 +50,10 @@
   .filter-item {
     display: inline-block;
     width: calc(50% - 1em);
+  }
+
+  .margin-05 {
+    margin: 0.5em;
   }
 }
 @media (min-width:641px)  {
