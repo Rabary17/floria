@@ -37,7 +37,7 @@ export class FilterComponent implements OnInit {
       nom: '2 000 000 Ar/mois'
     }, {
       value: '3000000',
-      nom: 'Terrain'
+      nom: '3 000 000 Ar/mois'
     }
   ];
 

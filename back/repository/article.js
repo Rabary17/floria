@@ -63,7 +63,6 @@ module.exports = {
         );
     },
     search(params) {
-        console.log(params);
         const parameters = [];
         let sql = `
             SELECT * 
@@ -78,16 +77,15 @@ module.exports = {
             sql += ` AND prix_cash <= ? `;
             parameters.push(params.prix_max);
         }
-        if(params.cat && params.cat !== '-') {
+        if(params.categorie && params.categorie !== '-') {
             sql += ` AND categorie = ? `;
-            parameters.push(params.cat);
+            parameters.push(params.categorie);
         }
-        if(params.men && params.men !== '-') {
+        if(params.mensualite && params.mensualite !== '-') {
             sql += ` AND mensualite = ? `;
-            parameters.push(params.men);
+            parameters.push(params.mensualite);
         }
-
+        sql += ` LIMIT 20 `;
         return Db.queryAll(sql, parameters);
-
     }
 };

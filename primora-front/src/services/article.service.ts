@@ -13,15 +13,18 @@ export class ArticleService{
 	}
 
 	getArticlesPinned(){
-		return this.http
-      .get('/articles/pinned')
-      .pipe(map(res=>res));
+		return this.getArticlesFromUrl('/articles/pinned');
 	}
 
 	getArticlesLastest(){
-		return this.http
-      .get('/articles/latest');
+		return this.getArticlesFromUrl('/articles/latest');
 	}
+
+  getArticlesFromUrl(url) {
+	  console.log(url);
+    return this.http
+      .get(url);
+  }
 
 	getArticlesDetails(id){
 		return this.http
@@ -29,8 +32,4 @@ export class ArticleService{
       .pipe(map(res=>res));
 	}
 
-	getArticlesBy(data) {
-    return this.http
-      .get(`/articles/search/${data.categorie}/${data.mensualite}/${data.prix_min}/${data.prix_max}`);
-  }
 }

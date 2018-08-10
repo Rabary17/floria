@@ -27,16 +27,14 @@ Router.get('/latest', async function(req, res, next) {
     }
 });
 
-Router.get('/search/:categorie/:mensualite/:prix_min/:prix_max', async function(req, res, next){
+Router.get('/search/:datasearch', async function(req, res, next){
     try {
-        let params = {
-            'cat' : req.params.categorie,
-            'men' : req.params.mensualite,
-            'prix_min' : req.params.prix_min,
-            'prix_max': req.params.prix_max
-        };
+        const encoded = new Buffer(req.params.datasearch, 'base64').toString();
+        const params = JSON.parse(encoded);
         const articles = await ArticleRepository.search(params);
-        res.status(200).json(articles.map(article => ArticleRepository.toObject(article)));
+        res.status(200).json({
+            items: articles.map(article => ArticleRepository.toObject(article))
+        });
     } catch(e) {
         return Response.sendError(res, e);
     }

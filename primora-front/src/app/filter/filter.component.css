@@ -1,18 +1,22 @@
-.filter {
+.filter-container {
   margin: 1em;
-  border: 1px solid #e6e6e6;
-  border-bottom: 3px solid #2e88c2;
   background-color: #fff;
   padding-bottom: 1em;
 }
-.filter header {
+.filter-container header {
   background-color: #09242e;
   border-radius: 4px 4px 0 0;
   color: #fff;
   padding: 1em;
 }
+.filter-body {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border: 1px solid #e6e6e6;
+  border-bottom: 3px solid #2e88c2;
+}
 .filter-item {
-  margin: 0.5em;
+  margin: 0.2em;
   display: inline-block;
   width: calc(100% - 1em);
 }
@@ -24,7 +28,6 @@
   margin: 0.5em 0 0.5em 0;
 }
 .label-prix {
-  display: block;
   font-size: 0.8em;
 }
 .recherche-button-container {

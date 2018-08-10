@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import {ArticleService} from "../../services/article.service";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {switchMap} from "rxjs/internal/operators";
+import {ActivatedRoute, Router} from "@angular/router";
+import { ArticlesListComponent }  from '../article/articles-list/articles-list.component';
 
 @Component({
   selector: 'app-page-result',
@@ -9,13 +9,19 @@ import {switchMap} from "rxjs/internal/operators";
   styleUrls: ['./page-result.component.css']
 })
 export class PageResultComponent implements OnInit {
+  @ViewChild(ArticlesListComponent)
+  private articleList: ArticlesListComponent;
+
   data: object;
+  @Input() searchurl: string;
 
   constructor(
     private articleService: ArticleService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+    this.searchurl = '';
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -30,10 +36,9 @@ export class PageResultComponent implements OnInit {
   }
 
   search(data) {
-    this.articleService.getArticlesBy(data)
-      .subscribe(articles => {
-        console.log(articles);
-      });
+    const params = btoa(JSON.stringify(data));
+    this.searchurl = `/articles/search/${params}`;
+    this.articleList.load();
   }
 
 }
