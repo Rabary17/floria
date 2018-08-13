@@ -1,92 +1,98 @@
-.filter-container {
-  margin: 1em;
-  background-color: #fff;
-  padding-bottom: 1em;
+.search-tours {
+  position: relative;
 }
-.filter-container header {
-  background-color: #09242e;
-  border-radius: 4px 4px 0 0;
+.search-tours:before,
+.search-tours:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 1;
+}
+.search-tours:before {
+  left: 0;
+  background: #31353e;
+}
+.search-tours:after {
+  right: 0;
+  background: #ee4136;
+}
+.search-tours .container {
+  z-index: 2;
+  position: relative;
+}
+.search-tours .sky-form {
+  box-shadow: none;
   color: #fff;
-  padding: 1em;
 }
-.filter-body {
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  border: 1px solid #e6e6e6;
-  border-bottom: 3px solid #2e88c2;
+.search-tours h2,
+.search-tours .h2 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 0;
 }
-.filter-item {
-  margin: 0.2em;
-  display: inline-block;
-  width: calc(100% - 1em);
+.search-tours h2 .block-name,
+.search-tours .h2 .block-name {
+  font-size: 11px;
+  padding: 0;
+  margin-bottom: 0;
+  color: #ee4136;
 }
-.filter-item-price > * {
-  margin: 0.1em 0.2em;
+.search-tours-title-wrapper {
+  background: #31353e;
+  padding-top: 52px;
+  padding-bottom: 64px;
 }
-.block50 {
-  display: inline-block;
-  width: calc(50% - 2em);
+.search-tours-col-bg-default {
+  background: #ee4136;
+  padding-top: 65px;
+  padding-bottom: 41px;
 }
-.margin-05 {
-  margin: 0.5em 0 0.5em 0;
+.search-tours .sky-form .label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  margin-bottom: 15px;
 }
-.label-prix {
-  display: inline-block;
-  font-size: 0.8em;
+.search-tours .sky-form .btn-u {
+  margin-top: 34px;
+  background: #31353e;
 }
-.recherche-button-container {
-  text-align: center;
+.search-tours .sky-form .btn-u:hover {
+  background: #1c1e24;
 }
+.search-tours .sky-form .input input,
+.search-tours .sky-form .select select,
+.search-tours .sky-form .textarea textarea {
+  background: #d43c31;
+  box-shadow: 0 0 3px #ca352b inset;
+  color: #fff;
+  border: none;
+}
+.search-tours .sky-form .select select {
+  color: #fff;
+}
+.search-tours ::-webkit-input-placeholder {color: #fff; opacity: 1;}
+.search-tours ::-moz-placeholder {color: #fff; opacity: 1;} /* Firefox 19+ */
+.search-tours :-moz-placeholder {color: #fff; opacity: 1;} /* Firefox 18- */
+.search-tours :-ms-input-placeholder {color: #fff; opacity: 1;}
 
-@media screen and (max-width: 320px) {
-  .block50 {
-    display: block;
-    width: 100%;
-  }
+.search-tours .sky-form .icon-append {
+  border: none;
+  color: #fff;
 }
-@media (min-width:320px) {
-  .filter-item {
-    display: inline-block;
-    width: calc(100% - 1em);
-  }
+.search-tours .sky-form .select i {
+  width: auto;
+  height: auto;
+  background: none;
 }
-@media (min-width:481px)  {
-  .filter-item {
-    display: inline-block;
-    width: calc(50% - 1em);
-  }
-
-  .margin-05 {
-    margin: 0.5em;
-  }
+.search-tours .sky-form .select i:before {
+  display: none;
 }
-@media (min-width:641px)  {
-  .filter-item {
-    display: inline-block;
-    width: calc(33.33% - 1em);
-  }
-}
-@media (min-width:961px)  {
-  .filter-item {
-    display: inline-block;
-    width: calc(25% - 1em);
-  }
-}
-@media (min-width:1025px) {
-  .filter-item {
-    display: inline-block;
-    width: calc(20% - 1em);
-  }
-}
-@media (min-width:1281px) {
-  .filter-item {
-    display: inline-block;
-    width: calc(16.666% - 1em);
-  }
-}
-@media (min-width: 1650px) {
-  .filter-item {
-    display: inline-block;
-    width: calc(16.666% - 1em);
-  }
+.search-tours .sky-form .select i:after {
+  border-top: 4px solid #fff;
+  top: 17px;
 }
