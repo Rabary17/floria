@@ -25,13 +25,6 @@ import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatListModule} from '@angular/material/list';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -60,13 +53,6 @@ import {MatCardModule} from '@angular/material/card';
     RouteModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSliderModule,
-    MatListModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
     MaterialModule
   ],
 
