@@ -44,39 +44,37 @@
 </div> -->
 
 
-<div class="search-tours g-heading-v8">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 search-tours-title-wrapper">
+<!-- <div class="search-tours">
+				<div class="search-tours-title-wrapper" style="width:30%;">
 					<div class="container">
 						<h2><em class="block-name">primora</em><br> Rechercher rapide</h2>
 					</div>
 				</div>
-				<div class="col-md-9 search-tours-col-bg-default">
+				<div class="search-tours-col-bg-default" style="width:70%;">
 					<div class="container">
 						<form action="#" class="sky-form clearfix row">
-							<div class="col col-md-2">
+							<div class="">
 								<label class="label">categorie</label>
-                      <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-                          <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
-                      </mat-select>
+                <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+                    <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
+                </mat-select>
 							</div>
 
-							<div class="col-md-2">
+							<div class="">
 								<label class="label">Mensualite</label>
                       <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
                           <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
                       </mat-select>
 							</div>
 
-							<div class="col-md-2">
+							<div class="">
 								<label class="label">Durée</label>
                   <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
                       <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
                   </mat-select>
               </div>
               
-							<div class="col-md-4">
+							<div class="">
                   <label class="label">Prix</label>
                   <div class="clearfix row">
                     <div class="block50 col-md-6">
@@ -98,13 +96,60 @@
                   </div>
               </div>
 
-							<div class="col-md-2">
+							<div class="">
 								<button type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Search</button>
 							</div>
 						</form>
 					</div>
 				</div>
-			</div>
-		</div>
   </div>
-  
+   -->
+
+   <section class="filtre">
+    <form action="#" class="sky-form clearfix row">
+     <ul class="recherche-rapide">
+       <li class="bloc"><h2><em class="block-name">primora</em><br> Rechercher rapide</h2></li>
+       <li class="select">
+          <label class="label">categorie</label>
+          <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+              <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
+          </mat-select>
+       </li>
+       <li class="select">
+          <label class="label">Mensualite</label>
+          <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+              <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
+          </mat-select>
+       </li>
+       <li class="select">
+          <label class="label">Durée</label>
+          <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+              <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
+          </mat-select>
+       </li>
+       <li class="select">
+        <label class="label">Prix</label>
+        <ul class="double">
+          <li class="block50 col-md-6">
+              <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min">
+                  <mat-option value="-">De</mat-option>
+                  <mat-option value="3000000">3 000 000</mat-option>
+                  <mat-option value="4000000">4 000 000</mat-option>
+                  <mat-option value="5000000">5 000 000</mat-option>
+              </mat-select>
+            </li>
+            <li class="block50 col-md-6">
+                <mat-select [(value)]="selected" name="prix_max">
+                    <mat-option value="-">De</mat-option>
+                    <mat-option value="6000000">6 000 000</mat-option>
+                    <mat-option value="7000000">7 000 000</mat-option>
+                    <mat-option value="8000000">8 000 000</mat-option>
+                </mat-select>
+              </li>
+        </ul></li>
+       <li class="button">
+         <button type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Search</button>
+        </li>
+     </ul>
+    </form>
+   </section>
