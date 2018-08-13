@@ -110,45 +110,63 @@
      <ul class="recherche-rapide">
        <li class="bloc"><h2>Recherche rapide</h2></li>
        <li class="">
-          <!-- <label class="label">categorie</label> -->
-          <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-              <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
-          </mat-select>
+          <mat-card>
+            <label class="label">categorie</label>
+            <mat-form-field>
+            <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+                <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </mat-card>
        </li>
        <li class="">
-          <!-- <label class="label">Mensualite</label> -->
-          <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-              <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
-          </mat-select>
+          <mat-card>
+            <label class="label">Mensualite</label>
+            <mat-form-field>
+            <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+                <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </mat-card>
        </li>
        <li class="">
-          <!-- <label class="label">Durée</label> -->
-          <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-              <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
-          </mat-select>
+          <mat-card>
+            <label class="label">Durée</label>
+            <mat-form-field>
+            <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+                <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </mat-card>
        </li>
        <li class="">
-        <!-- <label class="label">Prix</label> -->
-        <ul class="double">
-          <li class="block50 col-md-6">
-              <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min">
-                  <mat-option value="-">De</mat-option>
-                  <mat-option value="3000000">3 000 000</mat-option>
-                  <mat-option value="4000000">4 000 000</mat-option>
-                  <mat-option value="5000000">5 000 000</mat-option>
-              </mat-select>
-            </li>
-            <li class="block50 col-md-6">
-                <mat-select [(value)]="selected" name="prix_max">
+        <mat-card id="double">
+          <label class="label">Prix Min</label>
+          <mat-form-field>
+                <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min">
                     <mat-option value="-">De</mat-option>
+                    <mat-option value="3000000">3 000 000</mat-option>
+                    <mat-option value="4000000">4 000 000</mat-option>
+                    <mat-option value="5000000">5 000 000</mat-option>
+                </mat-select>
+          </mat-form-field>
+        </mat-card>
+      </li>
+      <li class="">
+          <mat-card id="double">
+            <label class="label">Prix Max</label>
+            <mat-form-field>
+                <mat-select [(value)]="selected" [(ngModel)]="formData.prix_max" name="prix_max">
+                    <mat-option value="-">A</mat-option>
                     <mat-option value="6000000">6 000 000</mat-option>
                     <mat-option value="7000000">7 000 000</mat-option>
                     <mat-option value="8000000">8 000 000</mat-option>
                 </mat-select>
-              </li>
-        </ul></li>
+            </mat-form-field>
+          </mat-card>
+        </li>
        <li class="">
-         <button type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Search</button>
+          <button mat-fab type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Go</button>
         </li>
      </ul>
     </form>
