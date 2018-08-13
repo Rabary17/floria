@@ -10,6 +10,8 @@ import {
   MatStepperModule,
   MatButtonModule,
   MatCardModule,
+  MatInputModule,
+  MatIconModule,
 
 } from '@angular/material';
 
@@ -24,6 +26,8 @@ import {
     MatSliderModule,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
+    MatIconModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -35,6 +39,8 @@ import {
     MatSliderModule,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
+    MatIconModule,
   ]
 })
 export class MaterialModule {}

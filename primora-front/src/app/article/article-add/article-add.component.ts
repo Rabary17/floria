@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategorieService } from '../../../services/categorie.service';
 
+
 @Component({
   selector: 'app-article-add',
   templateUrl: './article-add.component.html',
@@ -48,8 +49,6 @@ export class ArticleAddComponent implements OnInit {
       this.formData.categorie = cat[0].uuid;
       this.formData.fiche = {};
       this.totalStep = this.fiche.length;
-
-      console.log(this.fiche);
 
       ++this.currentStep;
     }
