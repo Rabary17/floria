@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from './material.module';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -53,6 +55,7 @@ import {MatCardModule} from '@angular/material/card';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouteModule,
     FormsModule,
@@ -63,7 +66,8 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MaterialModule
   ],
 
   providers: [],
