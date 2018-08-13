@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../../../models/article';
+import { config } from '../../../config';
 
 @Component({
   selector: 'app-article-thumb',
@@ -15,4 +16,7 @@ export class ArticleThumbComponent implements OnInit {
   ngOnInit() {
   }
 
+  getImage(file) {
+    return `${config.url}/medias/${file}`;
+  }
 }

@@ -81,7 +81,13 @@
         <div class="button-row">
           <button
             class="pointer"
+            *ngIf="indexStep > 0"
             mat-raised-button matStepperPrevious>&lt; Précédent</button>
+          <button
+            class="pointer"
+            mat-raised-button
+            *ngIf="indexStep <= 0"
+            (click)="previous(indexStep)">&lt; Précédent</button>
           <button
             class="pointer"
             *ngIf="indexStep < totalStep - 1"
@@ -96,108 +102,4 @@
 
     </mat-step>
   </mat-horizontal-stepper>
-
-
-  <!--
-  <div
-    *ngFor="let step of fiche; let indexStep = index"
-  >
-    <div class="article-item" *ngIf="indexStep === currentStep">
-      <h3>{{ indexStep }}: {{ step.label.fr }}</h3>
-
-      <div
-        *ngFor="let ficheItem of step.fiche" class="article-fiche">
-        <div class="article-item">
-          <label>{{ ficheItem.label.fr }}</label>
-          <input [type]="ficheItem.type"
-                 [placeholder]="ficheItem.label.fr"
-                 [(ngModel)]="formData.fiche[ficheItem.key]" />
-        </div>
-
-      </div>
-
-      <div>
-        <button
-          class="pointer"
-          (click)="previous(indexStep)">&lt; Précédent</button>
-        <button
-          class="pointer"
-          *ngIf="indexStep < totalStep - 1"
-          (click)="next(indexStep)">Suivant &gt;</button>
-        <button
-          class="pointer"
-          *ngIf="indexStep >= totalStep - 1"
-          (click)="add()">Terminer</button>
-      </div>
-    </div>
-
-  </div>
-  -->
-
-
-
-  <!--
-  <div class="article-item">
-    <label>Catégorie</label>
-    <select [(ngModel)]="formData.categorie" (ngModelChange)="changeCat($event)">
-      <option *ngFor="let cat of categories" [value]="cat.uuid">{{ cat.nom.fr }}</option>
-    </select>
-  </div>
-
-  <hr />
-
-  <div class="article-item">
-    <label>Titre</label>
-    <input type="text"
-           name="titre"
-           placeholder="Titre"
-           [(ngModel)]="formData.titre" />
-  </div>
-  <div class="article-item">
-    <label>Description</label>
-    <input type="text"
-           name="description"
-           placeholder="Description"
-           [(ngModel)]="formData.description" />
-  </div>
-  <div class="article-item">
-    <label>Prix cash</label>
-    <input type="number"
-           name="prix_cash"
-           placeholder="Prix cash"
-           [(ngModel)]="formData.prix_cash" />
-  </div>
-  <div class="article-item">
-    <label>Lieu</label>
-    <input type="text"
-           name="lieu"
-           placeholder="Lieu"
-           [(ngModel)]="formData.lieu" />
-  </div>
-  <div class="article-item">
-    <label>Adresse</label>
-    <input type="text"
-           name="adresse"
-           placeholder="adresse"
-           [(ngModel)]="formData.adresse" />
-  </div>
-  <fieldset>
-    <legend>Détails</legend>
-    <div>
-      <div
-        *ngFor="let ficheItem of fiche" class="article-fiche">
-        <div class="article-item">
-          <label>{{ ficheItem.label.fr }}</label>
-          <input [type]="ficheItem.type"
-                 [placeholder]="ficheItem.label.fr"
-                 [(ngModel)]="formData.fiche[ficheItem.key]" />
-        </div>
-
-      </div>
-    </div>
-  </fieldset>
-  <div class="text-center">
-    <button class="pointer" (click)="add()">Ajouter</button>
-  </div>
-  -->
 </div>
