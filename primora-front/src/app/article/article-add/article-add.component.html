@@ -1,5 +1,58 @@
 <div class="article">
-  <h2>Ajouter un article</h2>
+  <h2>
+    Ajouter un article
+    <span *ngIf="totalStep !== null">({{ currentStep }} / {{ totalStep }})</span>
+  </h2>
+
+  <div *ngIf="currentStep === -1">
+    <ul>
+      <li
+        *ngFor="let cat of categories"
+        class="pointer"
+        (click)="selectCategorie(cat.uuid)">
+        {{ cat.nom.fr }}
+      </li>
+    </ul>
+  </div>
+
+  <div
+    *ngFor="let step of fiche; let indexStep = index"
+  >
+    <div class="article-item" *ngIf="indexStep === currentStep">
+      <h3>{{ indexStep }}: {{ step.label.fr }}</h3>
+
+      <div
+        *ngFor="let ficheItem of step.fiche" class="article-fiche">
+        <div class="article-item">
+          <label>{{ ficheItem.label.fr }}</label>
+          <input [type]="ficheItem.type"
+                 [placeholder]="ficheItem.label.fr"
+                 [(ngModel)]="formData.fiche[ficheItem.key]" />
+        </div>
+
+      </div>
+
+      <div>
+        <button
+          class="pointer"
+          (click)="previous(indexStep)">&lt; Précédent</button>
+        <button
+          class="pointer"
+          *ngIf="indexStep < totalStep - 1"
+          (click)="next(indexStep)">Suivant &gt;</button>
+        <button
+          class="pointer"
+          *ngIf="indexStep >= totalStep - 1"
+          (click)="add()">Terminer</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!--
   <div class="article-item">
     <label>Catégorie</label>
     <select [(ngModel)]="formData.categorie" (ngModelChange)="changeCat($event)">
@@ -62,4 +115,5 @@
   <div class="text-center">
     <button class="pointer" (click)="add()">Ajouter</button>
   </div>
+  -->
 </div>
