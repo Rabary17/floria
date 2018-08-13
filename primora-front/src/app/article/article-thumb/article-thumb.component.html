@@ -1,25 +1,29 @@
 <div
-  class="article"
+  class="owl-item active text-left pointer"
   [routerLink]="['/article' , article.uuid]"
   role="button"
   tabindex="0"
 >
-    <div *ngIf="article.image" class="text-center">
+  <div class="our-tours-list-item">
+
+    <div *ngIf="article.image" class="img-wrapper img-wrapper--shadow">
       <img [src]="article.image" />
     </div>
-    <div *ngIf="!article.image" class="text-center">
-      <div class="border-100 blank-image"></div>
+    <div *ngIf="!article.image" class="img-wrapper img-wrapper--shadow">
+      <div class="blank-image"></div>
     </div>
-    <div class="text-center font-size-08 article-mensualite">
-      A partir de
-      <span class="font-size-16 mensualite">{{ article.mensualite }} Ar</span>
-      / mois
+    <div class="our-tours-list-item-description">
+      <h3>{{ article.titre }}</h3>
+      <p>{{ article.description }}</p>
+
+      <div class="our-tours-price">
+        A partir de
+        <span class="font-size-14 mensualite">{{ article.mensualite }} Ar</span>
+        / mois
+      </div>
+      <div class="our-tours-price">
+        <span class="font-size-14">{{ article.prix_cash }} Ar</span>
+      </div>
     </div>
-    <div class="text-center font-size-08 article-cash">
-      {{ article.prix_cash }} Ar
-    </div>
-    <div>
-      <div class="text-center font-size-12 article-titre">{{ article.titre }}</div>
-      <div class="text-center font-size-08 article-description">{{ article.description }}</div>
-    </div>
+  </div>
 </div>
