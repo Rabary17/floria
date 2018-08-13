@@ -1,4 +1,4 @@
-<div
+<mat-card
   class="owl-item active text-left pointer"
   [routerLink]="['/article' , article.uuid]"
   role="button"
@@ -12,7 +12,7 @@
     <div *ngIf="!article.image" class="img-wrapper img-wrapper--shadow">
       <div class="blank-image"></div>
     </div>
-    <div class="our-tours-list-item-description">
+    <mat-card-content class="our-tours-list-item-description">
       <h3>{{ article.titre }}</h3>
       <p>{{ article.description }}</p>
 
@@ -24,6 +24,6 @@
       <div class="our-tours-price">
         <span class="font-size-14">{{ article.prix_cash }} Ar</span>
       </div>
-    </div>
+    </mat-card-content>
   </div>
-</div>
+</mat-card>

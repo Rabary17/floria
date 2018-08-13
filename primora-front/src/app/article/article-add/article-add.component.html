@@ -21,6 +21,9 @@
       [label]="step.label.fr"
       *ngFor="let step of fiche; let indexStep = index"
     >
+      <header>
+        <h3>{{ step.label.fr }}</h3>
+      </header>
       <div *ngIf="step.fiche">
         <div
           *ngFor="let ficheItem of step.fiche" class="article-fiche">
@@ -33,16 +36,17 @@
 
         </div>
 
-        <div>
+        <div class="button-row">
           <button
             class="pointer"
-            mat-button matStepperPrevious>&lt; Précédent</button>
+            mat-raised-button matStepperPrevious>&lt; Précédent</button>
           <button
             class="pointer"
             *ngIf="indexStep < totalStep - 1"
-            mat-button matStepperNext>Suivant &gt;</button>
+            mat-raised-button matStepperNext>Suivant &gt;</button>
           <button
             class="pointer"
+            mat-raised-button
             *ngIf="indexStep >= totalStep - 1"
             (click)="add()">Terminer</button>
         </div>

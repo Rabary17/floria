@@ -8,7 +8,9 @@
 .article-item select {
   width: calc(100% - 2em);
 }
-
+.button-row > * {
+  margin-right: 8px;
+}
 @media (min-width:320px) {
   .article-fiche {
     display: block;

@@ -20,7 +20,7 @@ input, select, textarea {
   padding: 0.2em 0.5em;
 }
 
-button, .button {
+.button {
   background-color: #00b8e6;
   border: none;
   border-radius: 3px;
@@ -33,7 +33,6 @@ button, .button {
   padding: 0 10px;
   text-transform: uppercase;
 }
-
 .border-100 {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;

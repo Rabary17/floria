@@ -26,7 +26,6 @@ import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-artic
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,
