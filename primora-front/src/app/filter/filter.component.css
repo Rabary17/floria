@@ -4,6 +4,10 @@
 .filtre{
   width: 100%;
 }
+
+ul li{
+  border: none;
+}
 .recherche-rapide li{
 list-style-type: none;
 margin: 0;
@@ -13,10 +17,11 @@ text-align: center;
 
 .sky-form {
   height: 100px;
+  background: grey; 
 }
 .sky-form ul li{
-  height: 100px;
-  line-height: 100px;
+  /* height: 100px;
+  line-height: 100px; */
 }
 ul{
   margin: 0;
@@ -30,19 +35,58 @@ ul label{
 ul.double li{
   width: 50%;
 }
-
 @media screen and (max-device-width: 1920px){
 	.recherche-rapide li{
       width: 16.6% ;
       padding: 0.5%;
     }
 }
-@media screen and (max-device-width: 1200px){
+
+@media screen and (max-device-width: 1650px){
+	.recherche-rapide li{
+      width: 16.6% ;
+      padding: 0.5%;
+    }
+}
+@media screen and (max-device-width: 1650px){
+	.recherche-rapide li{
+      width: 16.6% ;
+      padding: 0.5%;
+    }
+}
+
+
+@media screen and (max-device-width: 1650px){
+	.recherche-rapide li{
+      width: 16.6% ;
+      padding: 0.5%;
+    }
+}
+
+@media screen and (max-device-width: 1281px){
+	.recherche-rapide li{
+      width: 16.6% ;
+      padding: 0.5%;
+    }
+}
+@media screen and (max-device-width: 1025px){
+	.recherche-rapide li{
+      width: 16.6% ;
+      padding: 0.5%;
+    }
+}
+@media screen and (max-device-width: 961px){
+	.recherche-rapide li{
+      width: 16.6% ;
+      padding: 0.5%;
+    }
+}
+@media screen and (max-device-width: 641px){
 	.recherche-rapide li{
       width: 16.6% ;
     }
 }
-@media screen and (max-device-width: 640px){
+@media screen and (max-device-width: 481px){
 	.recherche-rapide li{
   }
 }

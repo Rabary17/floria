@@ -108,27 +108,27 @@
    <section class="filtre">
     <form action="#" class="sky-form clearfix row">
      <ul class="recherche-rapide">
-       <li class="bloc"><h2><em class="block-name">primora</em><br> Rechercher rapide</h2></li>
-       <li class="select">
-          <label class="label">categorie</label>
+       <li class="bloc"><h2>Recherche rapide</h2></li>
+       <li class="">
+          <!-- <label class="label">categorie</label> -->
           <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
               <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
           </mat-select>
        </li>
-       <li class="select">
-          <label class="label">Mensualite</label>
+       <li class="">
+          <!-- <label class="label">Mensualite</label> -->
           <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
               <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
           </mat-select>
        </li>
-       <li class="select">
-          <label class="label">Durée</label>
+       <li class="">
+          <!-- <label class="label">Durée</label> -->
           <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
               <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
           </mat-select>
        </li>
-       <li class="select">
-        <label class="label">Prix</label>
+       <li class="">
+        <!-- <label class="label">Prix</label> -->
         <ul class="double">
           <li class="block50 col-md-6">
               <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min">
@@ -147,7 +147,7 @@
                 </mat-select>
               </li>
         </ul></li>
-       <li class="button">
+       <li class="">
          <button type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Search</button>
         </li>
      </ul>
