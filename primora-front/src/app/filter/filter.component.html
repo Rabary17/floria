@@ -73,7 +73,7 @@
                       <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
                   </mat-select>
               </div>
-              
+
 							<div class="">
                   <label class="label">Prix</label>
                   <div class="clearfix row">
@@ -148,7 +148,7 @@
               </li>
         </ul></li>
        <li class="">
-         <button type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Search</button>
+         <button type="button" class="btn-u btn-u-lg btn-u-upper" name="search" (click)="search()">Search</button>
         </li>
      </ul>
     </form>

@@ -6,15 +6,16 @@
 >
   <div class="our-tours-list-item">
 
-    <div *ngIf="article.image" class="img-wrapper img-wrapper--shadow">
-      <img [src]="article.image" />
+    <div *ngIf="article.images && article.images.length > 0" class="img-wrapper img-wrapper--shadow">
+      <div class="blank-image"
+           [style.backgroundImage]="'url('+ getImage(article.images[0]) +')'"></div>
     </div>
-    <div *ngIf="!article.image" class="img-wrapper img-wrapper--shadow">
+    <div *ngIf="!article.images || article.images.length === 0" class="img-wrapper img-wrapper--shadow">
       <div class="blank-image"></div>
     </div>
     <mat-card-content class="our-tours-list-item-description">
       <h3>{{ article.titre }}</h3>
-      <p>{{ article.description }}</p>
+      <p>{{ article.soustitre }}</p>
 
       <div class="our-tours-price">
         A partir de
@@ -22,7 +23,7 @@
         / mois
       </div>
       <div class="our-tours-price">
-        <span class="font-size-14">{{ article.prix_cash }} Ar</span>
+        <span class="font-size-14">{{ article.cash }} Ar</span>
       </div>
     </mat-card-content>
   </div>

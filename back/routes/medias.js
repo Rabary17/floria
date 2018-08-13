@@ -26,5 +26,12 @@ Router.post('/', upload.single('photo'), async function(req, res, next) {
     }
 });
 
+Router.get('/:file', async function(req, res, next) {
+    try {
+        res.sendFile(`${Config.medias.uploadDir}/${req.params.file}`);
+    } catch(e) {
+        return Response.sendError(res, e);
+    }
+});
 
 module.exports = Router;
