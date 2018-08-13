@@ -23,6 +23,7 @@ import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { FormsModule } from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     RouteModule,
-    FormsModule
+    FormsModule,
+    MatSliderModule,
   ],
 
   providers: [],
