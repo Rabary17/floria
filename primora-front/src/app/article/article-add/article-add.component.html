@@ -16,33 +16,48 @@
     </mat-list>
   </div>
 
-  <mat-horizontal-stepper #addstepper>
+  <mat-horizontal-stepper class="steppers" #addstepper>
     <mat-step
       [label]="step.label.fr"
       *ngFor="let step of fiche; let indexStep = index"
     >
-      <div *ngIf="step.fiche">
+      <header>
+        <h3>{{ step.label.fr }}</h3>
+      </header>
+      <div>
         <div
-          *ngFor="let ficheItem of step.fiche" class="article-fiche">
+          *ngFor="let ficheItem of step?.fiche" class="article-fiche">
           <div class="article-item">
-            <label>{{ ficheItem.label.fr }}</label>
-            <input [type]="ficheItem.type"
-                   [placeholder]="ficheItem.label.fr"
-                   [(ngModel)]="formData.fiche[ficheItem.key]" />
+
+            <mat-card *ngIf="ficheItem.type === 'image'">
+              <mat-card-subtitle>{{ ficheItem.label.fr }}</mat-card-subtitle>
+              <app-upload-file></app-upload-file>
+            </mat-card>
+
+            <mat-card *ngIf="ficheItem.type !== 'image'">
+              <mat-form-field>
+                <input [type]="ficheItem.type"
+                       [placeholder]="ficheItem.label.fr"
+                       matInput
+                       [(ngModel)]="formData.fiche[ficheItem.key]" />
+              </mat-form-field>
+            </mat-card>
+
           </div>
 
         </div>
 
-        <div>
+        <div class="button-row">
           <button
             class="pointer"
-            mat-button matStepperPrevious>&lt; Précédent</button>
+            mat-raised-button matStepperPrevious>&lt; Précédent</button>
           <button
             class="pointer"
             *ngIf="indexStep < totalStep - 1"
-            mat-button matStepperNext>Suivant &gt;</button>
+            mat-raised-button matStepperNext>Suivant &gt;</button>
           <button
             class="pointer"
+            mat-raised-button
             *ngIf="indexStep >= totalStep - 1"
             (click)="add()">Terminer</button>
         </div>

@@ -25,7 +25,7 @@ import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { FileSelectDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageResultComponent,
     PageFicheArticleComponent,
     PageAddArticleComponent,
+    FileSelectDirective,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouteModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
   ],
 
   providers: [],

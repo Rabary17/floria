@@ -1,3 +1,12 @@
-<p>
-  upload-file works!
-</p>
+<div>
+  <input type="file" ng2FileSelect [uploader]="uploader" />
+  <mat-list>
+    <mat-list-item *ngFor="let file of uploader.queue">
+      <mat-icon
+        mat-list-icon
+        class="pointer font-warning"
+        (click)="file.remove()">clear</mat-icon>
+      <h4 mat-line>{{ file?.file?.name }}</h4>
+    </mat-list-item>
+  </mat-list>
+</div>

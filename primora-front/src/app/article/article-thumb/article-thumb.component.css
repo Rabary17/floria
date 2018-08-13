@@ -109,3 +109,6 @@
 .blank-image {
   min-height: 280px;
 }
+.mat-card {
+  padding: 0;
+}
