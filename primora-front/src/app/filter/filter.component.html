@@ -57,21 +57,21 @@
 						<form action="#" class="sky-form clearfix row">
 							<div class="col col-md-2">
 								<label class="label">categorie</label>
-                      <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-                          <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
-                      </mat-select>
+                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+                      <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
+                  </mat-select>
 							</div>
 
 							<div class="col-md-2">
 								<label class="label">Mensualite</label>
-                      <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-                          <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
-                      </mat-select>
+                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="mensualite">
+                      <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
+                  </mat-select>
 							</div>
 
 							<div class="col-md-2">
 								<label class="label">Durée</label>
-                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
+                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="duree">
                       <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
                   </mat-select>
               </div>
@@ -88,8 +88,8 @@
                         </mat-select>
                       </div>
                       <div class="block50 col-md-6">
-                          <mat-select [(value)]="selected" name="prix_max">
-                              <mat-option value="-">De</mat-option>
+                          <mat-select [(value)]="selected" [(ngModel)]="formData.prix_max" name="prix_max">
+                              <mat-option value="-">A</mat-option>
                               <mat-option value="6000000">6 000 000</mat-option>
                               <mat-option value="7000000">7 000 000</mat-option>
                               <mat-option value="8000000">8 000 000</mat-option>
