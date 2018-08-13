@@ -37,8 +37,15 @@ export class ArticleAddComponent implements OnInit {
   }
 
   add() {
+    console.log(this.formData);
     this.categorieService.save(this.formData).subscribe(result => {
-      console.log(result);
+      /*
+      if(res.affectedRows) {
+
+      } else {
+        // TODO error
+      }
+      */
     });
   }
 
@@ -60,5 +67,9 @@ export class ArticleAddComponent implements OnInit {
 
   previous(current) {
     this.currentStep = --current;
+  }
+
+  updateFiles(files, key) {
+    this.formData.fiche[key] = files;
   }
 }

@@ -31,15 +31,46 @@
 
             <mat-card *ngIf="ficheItem.type === 'image'">
               <mat-card-subtitle>{{ ficheItem.label.fr }}</mat-card-subtitle>
-              <app-upload-file></app-upload-file>
+              <app-upload-file (uploadChanged)="updateFiles($event, ficheItem.key)"></app-upload-file>
             </mat-card>
 
-            <mat-card *ngIf="ficheItem.type !== 'image'">
+            <mat-card *ngIf="ficheItem.type === 'text' || ficheItem.type === 'number'">
               <mat-form-field>
                 <input [type]="ficheItem.type"
                        [placeholder]="ficheItem.label.fr"
                        matInput
                        [(ngModel)]="formData.fiche[ficheItem.key]" />
+              </mat-form-field>
+            </mat-card>
+
+            <mat-card *ngIf="ficheItem.type === 'select'">
+              <mat-form-field>
+                <mat-select
+                  [placeholder]="ficheItem.label.fr"
+                  [(ngModel)]="formData.fiche[ficheItem.key]">
+                  <mat-option *ngFor="let item of ficheItem.items" [value]="item">
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-card>
+
+            <mat-card *ngIf="ficheItem.type === 'bool'">
+              <mat-slide-toggle
+                class="example-margin"
+                [(ngModel)]="formData.fiche[ficheItem.key]">
+                {{ ficheItem.label.fr }}
+              </mat-slide-toggle>
+            </mat-card>
+
+            <mat-card *ngIf="ficheItem.type === 'textarea'">
+              <mat-form-field>
+                <textarea
+                  [type]="ficheItem.type"
+                  [placeholder]="ficheItem.label.fr"
+                  matInput
+                  rows="10"
+                  [(ngModel)]="formData.fiche[ficheItem.key]"></textarea>
               </mat-form-field>
             </mat-card>
 

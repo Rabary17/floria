@@ -12,6 +12,7 @@ import {
   MatCardModule,
   MatInputModule,
   MatIconModule,
+  MatSlideToggleModule,
 
 } from '@angular/material';
 
@@ -28,6 +29,7 @@ import {
     MatCardModule,
     MatInputModule,
     MatIconModule,
+    MatSlideToggleModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -41,6 +43,7 @@ import {
     MatCardModule,
     MatInputModule,
     MatIconModule,
+    MatSlideToggleModule,
   ]
 })
 export class MaterialModule {}
