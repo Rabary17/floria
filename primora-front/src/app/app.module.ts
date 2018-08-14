@@ -27,6 +27,7 @@ import { PageAddArticleComponent } from './page-add-article/page-add-article.com
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileSelectDirective } from 'ng2-file-upload';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    SlideshowModule
   ],
 
   providers: [],

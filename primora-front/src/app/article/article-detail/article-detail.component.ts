@@ -42,8 +42,8 @@ export class ArticleDetailComponent implements OnInit {
     });
   }
 
-  getImage(file) {
-    return this.mediaService.getImage(file);
+  getImages(files) {
+    return files.map(item => this.mediaService.getImage(item));
   }
 
 }

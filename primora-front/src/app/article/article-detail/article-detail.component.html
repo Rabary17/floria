@@ -13,7 +13,15 @@
 <div class="article-detail">
   <div class="article-show-left">
     <div *ngIf="fiche.images && fiche.images.length > 0" class="img-wrapper img-wrapper--shadow">
-        <img [src]="getImage(fiche.images[0])">
+        <slideshow
+                [minHeight]="'525px'"
+                [autoPlay]="true"
+                [showArrows]="true"
+                [imageUrls]="getImages(fiche.images)"
+                [lazyLoad]="fiche.images?.length > 1"
+                [autoPlayWaitForLazyLoad]="true">
+        </slideshow>  
+      <slideshow [imageUrls]=""></slideshow> 
     </div>
     <div class="traite">
       <!--span>A partir de <strong>556.000 Ar</strong>/mois</span-->
