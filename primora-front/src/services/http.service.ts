@@ -30,4 +30,7 @@ export class HttpService {
     });
   }
 
+  delete(url:string): Observable<any> {
+    return this.http.delete(config.url + url);
+  }
 }

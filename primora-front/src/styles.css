@@ -67,3 +67,6 @@ mat-form-field {
 .font-warning {
   color: red;
 }
+.clear {
+  clear: both;
+}

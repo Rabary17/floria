@@ -1,168 +1,71 @@
-<!-- <div class="filter-container container-fluid ">
-  <header>
-    Recherchez une annonce
-  </header>
-  <div class="filter-body text-center row">
-    <div class="filter-item col-md-2">
-      <select [(ngModel)]="formData.categorie">
-        <option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</option>
-      </select>
-    </div>
-    <div class="filter-item col-md-2">
-      <select [(ngModel)]="formData.mensualite">
-        <option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</option>
-      </select>
-    </div>
-    <div class="filter-item col-md-2">
-      <select [(ngModel)]="formData.duree">
-        <option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</option>
-      </select>
-    </div>
-    <div class="filter-item filter-item-price text-left col-md-2">
-        <div class="label-prix">Prix</div>
-        <div class="block50">
-          <select [(ngModel)]="formData.prix_min">
-            <option value="-">De</option>
-            <option>3 000 000</option>
-            <option>4 000 000</option>
-            <option>5 000 000</option>
-          </select>
+<div class="search-tours g-heading-v8">
+  <div class="container">
+    <div class="row search-tours-container">
+      <div class="search-tours-title-wrapper">
+        <div class="container">
+          <h2>PRIMORA</h2>
         </div>
-        <div class="block50 col-md-2">
-          <select [(ngModel)]="formData.prix_max">
-            <option value="-">A</option>
-            <option value="6000000">6 000 000</option>
-            <option value="7000000">7 000 000</option>
-            <option value="8000000">8 000 000</option>
-          </select>
-        </div>
-    </div>
-    <div class="recherche-button-container">
-      <button class="pointer" (click)="search()">Rechercher</button>
-    </div>
-  </div>
-</div> -->
+      </div>
+      <div class="search-tours-col-bg-default">
+        <div class="container">
 
-
-<!-- <div class="search-tours">
-				<div class="search-tours-title-wrapper" style="width:30%;">
-					<div class="container">
-						<h2><em class="block-name">primora</em><br> Rechercher rapide</h2>
-					</div>
-				</div>
-				<div class="search-tours-col-bg-default" style="width:70%;">
-					<div class="container">
-						<form action="#" class="sky-form clearfix row">
-							<div class="">
-								<label class="label">categorie</label>
-                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="categorie">
-                      <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
-                  </mat-select>
-							</div>
-
-							<div class="">
-								<label class="label">Mensualite</label>
-                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="mensualite">
-                      <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
-                  </mat-select>
-							</div>
-
-							<div class="">
-								<label class="label">Durée</label>
-                  <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" name="duree">
-                      <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
-                  </mat-select>
-              </div>
-
-							<div class="">
-                  <label class="label">Prix</label>
-                  <div class="clearfix row">
-                    <div class="block50 col-md-6">
-                        <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min">
-                            <mat-option value="-">De</mat-option>
-                            <mat-option value="3000000">3 000 000</mat-option>
-                            <mat-option value="4000000">4 000 000</mat-option>
-                            <mat-option value="5000000">5 000 000</mat-option>
-                        </mat-select>
-                      </div>
-                      <div class="block50 col-md-6">
-                          <mat-select [(value)]="selected" [(ngModel)]="formData.prix_max" name="prix_max">
-                              <mat-option value="-">A</mat-option>
-                              <mat-option value="6000000">6 000 000</mat-option>
-                              <mat-option value="7000000">7 000 000</mat-option>
-                              <mat-option value="8000000">8 000 000</mat-option>
-                          </mat-select>
-                    </div>
-                  </div>
-              </div>
-
-							<div class="">
-								<button type="submit" class="btn-u btn-u-lg btn-u-upper" name="search">Search</button>
-							</div>
-						</form>
-					</div>
-				</div>
-  </div>
-   -->
-
-   <section class="filtre">
-    <form #filterNewForm="ngForm" class="sky-form clearfix row">
-     <ul class="recherche-rapide">
-       <li class="bloc"><h2>Recherche rapide</h2></li>
-       <li class="">
-          <mat-card>
+          <div class="form-item">
             <mat-form-field>
-            <mat-select [(value)]="selected" [(ngModel)]="formData.categorie"  name="categorie" placeholder="categorie">
+              <mat-select [(value)]="selected" [(ngModel)]="formData.categorie" placeholder="categorie">
                 <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
-            </mat-select>
+              </mat-select>
             </mat-form-field>
-          </mat-card>
-       </li>
-       <li class="">
-          <mat-card>
+          </div>
+
+
+          <div class="form-item">
             <mat-form-field>
-            <mat-select [(value)]="selected" [(ngModel)]="formData.mensualite" name="mensualite" placeholder="Mensualite">
+              <mat-select [(value)]="selected" [(ngModel)]="formData.mensualite" placeholder="Mensualite">
                 <mat-option *ngFor="let mens of mensualite" [value]="mens.value">{{ mens.nom }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          </mat-card>
-       </li>
-       <li class="">
-          <mat-card>
-            <mat-form-field>
-            <mat-select [(value)]="selected" [(ngModel)]="formData.duree" name="duree" placeholder="Durée">
-                <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          </mat-card>
-       </li>
-       <li class="">
-        <mat-card id="double">
-          <mat-form-field>
-                <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min" placeholder="Prix Min">
-                    <mat-option value="-">De</mat-option>
-                    <mat-option value="3000000">3 000 000</mat-option>
-                    <mat-option value="4000000">4 000 000</mat-option>
-                    <mat-option value="5000000">5 000 000</mat-option>
-                </mat-select>
-          </mat-form-field>
-        </mat-card>
-      </li>
-      <li class="">
-          <mat-card id="double">
-            <mat-form-field>
-                <mat-select [(value)]="selected" [(ngModel)]="formData.prix_max" name="prix_max" placeholder="Prix Max">
-                    <mat-option value="-">A</mat-option>
-                    <mat-option value="6000000">6 000 000</mat-option>
-                    <mat-option value="7000000">7 000 000</mat-option>
-                    <mat-option value="8000000">8 000 000</mat-option>
-                </mat-select>
+              </mat-select>
             </mat-form-field>
-          </mat-card>
-        </li>
-       <li class="">
-          <button mat-fab type="submit" (click)="search()" class="btn-u btn-u-lg btn-u-upper" name="search">Go</button>
-        </li>
-     </ul>
-    </form>
-   </section>
+          </div>
+
+
+          <div class="form-item">
+            <mat-form-field>
+              <mat-select [(value)]="selected" [(ngModel)]="formData.duree" name="duree" placeholder="Durée">
+                <mat-option *ngFor="let d of duree" [value]="d.value">{{ d.nom }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+          <div class="form-item">
+            <mat-form-field>
+              <mat-select [(value)]="selected" [(ngModel)]="formData.prix_min" name="prix_min" placeholder="Prix Min">
+                <mat-option value="-">De</mat-option>
+                <mat-option value="3000000">3 000 000</mat-option>
+                <mat-option value="4000000">4 000 000</mat-option>
+                <mat-option value="5000000">5 000 000</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="form-item">
+            <mat-form-field>
+              <mat-select [(value)]="selected" [(ngModel)]="formData.prix_max" name="prix_max" placeholder="Prix Max">
+                <mat-option value="-">A</mat-option>
+                <mat-option value="6000000">6 000 000</mat-option>
+                <mat-option value="7000000">7 000 000</mat-option>
+                <mat-option value="8000000">8 000 000</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+          <button mat-raised-button type="button" (click)="search()" >Rechercher</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
