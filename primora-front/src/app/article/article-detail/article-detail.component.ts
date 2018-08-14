@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-//import {HttpService} from "../../../services/http.service";
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../../services/article.service';
 import { CategorieService } from '../../../services/categorie.service';
 import {MediaService} from "../../../services/media.service";
@@ -14,31 +12,28 @@ import {MediaService} from "../../../services/media.service";
 export class ArticleDetailComponent implements OnInit {
   id: number;
   private sub: any;
-  private article;
 
-  fiche = [];
-  jsonFiche = {};
-  keyFiche = [];
+  fiche = {};
   ficheCategorie = [];
+  ficheImages = [];
 
   constructor(
-    private articleService: ArticleService, 
+    private articleService: ArticleService,
     private route: ActivatedRoute,
     private categorieService: CategorieService,
     private mediaService: MediaService
   ) { }
 
   ngOnInit() {
-     this.sub = this.route.params.subscribe(params => {
-       this.id = params['id'];
-       this.articleService.getArticlesDetails(this.id).subscribe(article => {
-         this.categorieService.getByUuid(article.categorie).subscribe(categorie => {
-            this.ficheCategorie = categorie.fiche;
-         });
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.articleService.getArticlesDetails(this.id).subscribe(article => {
+        this.categorieService.getByUuid(article.categorie).subscribe(categorie => {
+          this.ficheCategorie = categorie.fiche;
+        });
         this.fiche = article.fiche;
-        this.keyFiche = Object.keys(this.fiche);
-        console.log(this.fiche);
-       });
+        this.ficheImages = this.getImages(article.fiche.images)
+      });
     });
   }
 

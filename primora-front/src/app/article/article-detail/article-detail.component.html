@@ -1,27 +1,15 @@
-<!--
-<div>
-  <img [src]="article.image">
-  <h1>{{article.titre}}</h1>
-  <p>{{article.subtitle}}</p>
-</div>
-
-<app-simulation-credit></app-simulation-credit>
-
-<button routerLink="/banque">Je demande mon financement</button>
--->
-
 <div class="article-detail">
   <div class="article-show-left">
-    <div *ngIf="fiche.images && fiche.images.length > 0" class="img-wrapper img-wrapper--shadow">
+    <div *ngIf="fiche?.images && fiche?.images?.length > 0" class="img-wrapper img-wrapper--shadow">
         <slideshow
                 [minHeight]="'525px'"
                 [autoPlay]="true"
                 [showArrows]="true"
-                [imageUrls]="getImages(fiche.images)"
-                [lazyLoad]="fiche.images?.length > 1"
+                [imageUrls]="ficheImages"
+                [lazyLoad]="ficheImages?.length > 1"
+                [showDots]="true"
                 [autoPlayWaitForLazyLoad]="true">
-        </slideshow>  
-      <slideshow [imageUrls]=""></slideshow> 
+        </slideshow>
     </div>
     <div class="traite">
       <!--span>A partir de <strong>556.000 Ar</strong>/mois</span-->
@@ -49,9 +37,9 @@
             </tr>
           </table>
     </div>
-    
+
   </div>
-  
+
   <div>
     <app-simulation-credit></app-simulation-credit>
     <button routerLink="/banque">Je demande mon financement</button>
