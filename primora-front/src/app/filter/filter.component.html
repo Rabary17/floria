@@ -11,7 +11,7 @@
 
           <div class="form-item">
             <mat-form-field>
-              <mat-select [(ngModel)]="formData.categorie" placeholder="categorie">
+              <mat-select [(ngModel)]="formData.categorie" placeholder="Categorie">
                 <mat-option *ngFor="let cat of categorie" [value]="cat.uuid">{{ cat.nom }}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -38,7 +38,7 @@
 
           <div class="form-item">
             <mat-form-field>
-              <mat-select [(ngModel)]="formData.prix_min" name="prix_min" placeholder="Prix Min">
+              <mat-select [(ngModel)]="formData.prix_min" name="prix_min" placeholder="Prix Min (Ar)">
                 <mat-option value="-">De</mat-option>
                 <mat-option value="3000000">3 000 000</mat-option>
                 <mat-option value="4000000">4 000 000</mat-option>
@@ -51,7 +51,7 @@
 
           <div class="form-item">
             <mat-form-field>
-              <mat-select [(ngModel)]="formData.prix_max" name="prix_max" placeholder="Prix Max">
+              <mat-select [(ngModel)]="formData.prix_max" name="prix_max" placeholder="Prix Max (Ar)">
                 <mat-option value="-">A</mat-option>
                 <mat-option value="6000000">6 000 000</mat-option>
                 <mat-option value="7000000">7 000 000</mat-option>
