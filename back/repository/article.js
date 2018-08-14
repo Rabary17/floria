@@ -78,11 +78,11 @@ module.exports = {
             WHERE 1 = 1
         `;
         if(params.prix_min && params.prix_min !== '-') {
-            sql += ` AND prix_cash >= ? `;
+            sql += ` AND fiche->"$.cash" >= ? `;
             parameters.push(params.prix_min);
         }
         if(params.prix_max && params.prix_max !== '-') {
-            sql += ` AND prix_cash <= ? `;
+            sql += ` AND fiche->"$.cash" <= ? `;
             parameters.push(params.prix_max);
         }
         if(params.categorie && params.categorie !== '-') {
