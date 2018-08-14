@@ -14,4 +14,13 @@ Router.get('/', async function(req, res, next) {
     }
 });
 
+Router.get('/:categorieuid', async function(req, res, next) {
+    try {
+        const categorie = await Categorie.findByUuid(req.params.categorieuid);
+        res.status(200).json(categorie);
+    } catch(e) {
+        return Response.sendError(res, e);
+    }
+});
+
 module.exports = Router;

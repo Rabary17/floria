@@ -1,4 +1,8 @@
 /* Search Tours Section */
+.mat-raised-button {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #31353e;
+}
 .search-tours {
   position: relative;
   background-color: #31353e;
@@ -71,7 +75,7 @@
 }
 h2 {
   margin: 0;
-  padding: 1em;
+  padding: 0.7em;
 }
 .search-tours-title-wrapper {
   background: #31353e;
@@ -107,12 +111,6 @@ h2 {
     flex: 1;
   }
 
-
-  .form-item {
-    display: inline-block;
-    width: 30%;
-  }
-
 }
 @media (max-width: 991px) {
 
@@ -131,6 +129,72 @@ h2 {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+  }
+}
+@media (min-width: 1516px) {
+  .form-item {
+    display: inline-block;
+    width: 17.2%;
+  }
+}
+@media (min-width: 1428px) and (max-width:1515px) {
+  .form-item {
+    display: inline-block;
+    width: 17%;
+  }
+}
+@media (min-width: 1352px) and (max-width:1427px) {
+  .form-item {
+    display: inline-block;
+    width: 16.8%;
+  }
+}
+@media (min-width: 1284px) and (max-width:1351px) {
+  .form-item {
+    display: inline-block;
+    width: 16.6%;
+  }
+}
+@media (min-width: 1224px) and (max-width:1283px) {
+  .form-item {
+    display: inline-block;
+    width: 16.4%;
+  }
+}
+@media (min-width: 1170px) and (max-width:1223px) {
+  .form-item {
+    display: inline-block;
+    width: 16.2%;
+  }
+}
+@media (min-width: 1121px) and (max-width:1169px) {
+  .form-item {
+    display: inline-block;
+    width: 16%;
+  }
+}
+@media (min-width: 1077px) and (max-width:1120px) {
+  .form-item {
+    display: inline-block;
+    width: 15.8%;
+  }
+}
+@media (min-width: 1038px) and (max-width:1076px) {
+  .form-item {
+    display: inline-block;
+    width: 15.6%;
+  }
+}
+@media (min-width: 1001px) and (max-width:1037px) {
+  .form-item {
+    display: inline-block;
+    width: 15.4%;
+  }
+}
+@media (min-width: 992px) and (max-width:1000px) {
+  .form-item {
+    display: inline-block;
+    width: 15.2%;
   }
 }
 @media (max-width: 991px) {

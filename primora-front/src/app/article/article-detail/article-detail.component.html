@@ -12,93 +12,36 @@
 
 <div class="article-detail">
   <div class="article-show-left">
-    <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg">
+    <div *ngIf="fiche.images && fiche.images.length > 0" class="img-wrapper img-wrapper--shadow">
+        <img [src]="getImage(fiche.images[0])">
+    </div>
     <div class="traite">
-      <span>A partir de <strong>556.000 Ar</strong>/mois</span>
+      <!--span>A partir de <strong>556.000 Ar</strong>/mois</span-->
     </div>
     <div class="price">
-      <span>150.000.000 Ar</span>
+      <span>{{ fiche.cash }} Ar</span>
     </div>
-    <h2>Titre de l'article</h2>
-    <h3>Sous titre</h3>
-    <table id="caracteristique">
-      <tr>
-        <th>Caractéristiques</th>
-        <th></th>
-      </tr>
-      <tr>
-        <td>Titre</td>
-        <td>{{ fiche.marque }}</td>
-      </tr>
-      <tr>
-        <td>Medèle</td>
-        <td>{{ fiche.modele }}</td>
-      </tr>
-      <tr>
-        <td>Version</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Année</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Mise en circulation</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Kilomètrage</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Carrosserie</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Carburant</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Transmission</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Vitesse</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Couleur</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Places</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Porte</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Puissance fiscal</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Puissance réel</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Première main</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Emission co2</td>
-        <td>Contenu</td>
-      </tr>
-      <tr>
-        <td>Réference</td>
-        <td>Contenu</td>
-      </tr>
-    </table>
+    <h2>{{ fiche.titre }}</h2>
+    <h3>{{ fiche.soustitre }}</h3>
+    <p>{{ fiche.description }}</p>
+    <div *ngFor="let cat of ficheCategorie">
+        <table id="caracteristique">
+            <tr>
+              <th colspan="2">
+                {{ cat.label.fr }}
+              </th>
+            </tr>
+            <tr *ngFor="let ficheItem of cat?.fiche">
+              <td>
+                  {{ ficheItem.label.fr }}
+              </td>
+              <td>
+                  {{ fiche[ficheItem.key] }}
+              </td>
+            </tr>
+          </table>
+    </div>
+    
   </div>
   
   <div>
