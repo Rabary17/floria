@@ -130,21 +130,71 @@ h2 {
     padding-left: 0;
     padding-right: 0;
   }
+}
+@media (min-width: 1516px) {
   .form-item {
     display: inline-block;
-    width: 32%;
+    width: 17.2%;
   }
 }
-@media (max-width: 1415px) and (min-width: 1087px) {
+@media (min-width: 1428px) and (max-width:1515px) {
   .form-item {
     display: inline-block;
-    width: 31.5%;
+    width: 17%;
   }
 }
-@media (max-width: 1086px) and (min-width: 991px) {
+@media (min-width: 1352px) and (max-width:1427px) {
   .form-item {
     display: inline-block;
-    width: 31%;
+    width: 16.8%;
+  }
+}
+@media (min-width: 1284px) and (max-width:1351px) {
+  .form-item {
+    display: inline-block;
+    width: 16.6%;
+  }
+}
+@media (min-width: 1224px) and (max-width:1283px) {
+  .form-item {
+    display: inline-block;
+    width: 16.4%;
+  }
+}
+@media (min-width: 1170px) and (max-width:1223px) {
+  .form-item {
+    display: inline-block;
+    width: 16.2%;
+  }
+}
+@media (min-width: 1121px) and (max-width:1169px) {
+  .form-item {
+    display: inline-block;
+    width: 16%;
+  }
+}
+@media (min-width: 1077px) and (max-width:1120px) {
+  .form-item {
+    display: inline-block;
+    width: 15.8%;
+  }
+}
+@media (min-width: 1038px) and (max-width:1076px) {
+  .form-item {
+    display: inline-block;
+    width: 15.6%;
+  }
+}
+@media (min-width: 1001px) and (max-width:1037px) {
+  .form-item {
+    display: inline-block;
+    width: 15.4%;
+  }
+}
+@media (min-width: 992px) and (max-width:1000px) {
+  .form-item {
+    display: inline-block;
+    width: 15.2%;
   }
 }
 @media (max-width: 991px) {
