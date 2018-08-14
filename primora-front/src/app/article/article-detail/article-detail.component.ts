@@ -3,6 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 //import {HttpService} from "../../../services/http.service";
 import { HttpClient } from '@angular/common/http';
 import { ArticleService } from '../../../services/article.service';
+import { CategorieService } from '../../../services/categorie.service';
+import {MediaService} from "../../../services/media.service";
 
 @Component({
   selector: 'app-article-detail',
@@ -13,32 +15,35 @@ export class ArticleDetailComponent implements OnInit {
   id: number;
   private sub: any;
   private article;
-  /*constructor(private route: ActivatedRoute,
-              private http: HttpClient) {
 
-   }*/
   fiche = [];
   jsonFiche = {};
   keyFiche = [];
+  ficheCategorie = [];
 
   constructor(
     private articleService: ArticleService, 
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private categorieService: CategorieService,
+    private mediaService: MediaService
   ) { }
 
   ngOnInit() {
      this.sub = this.route.params.subscribe(params => {
        this.id = params['id'];
        this.articleService.getArticlesDetails(this.id).subscribe(article => {
+         this.categorieService.getByUuid(article.categorie).subscribe(categorie => {
+            this.ficheCategorie = categorie.fiche;
+         });
         this.fiche = article.fiche;
-        //this.jsonFiche = JSON.stringify(this.fiche);
-        //console.log(Object.keys(article));
-        //console.log(typeof(this.jsonFiche));
-        //console.log(Object.keys(this.fiche)[0]);// donne annee
         this.keyFiche = Object.keys(this.fiche);
         console.log(this.fiche);
        });
     });
+  }
+
+  getImage(file) {
+    return this.mediaService.getImage(file);
   }
 
 }

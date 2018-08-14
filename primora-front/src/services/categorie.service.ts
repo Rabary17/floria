@@ -18,4 +18,7 @@ export class CategorieService {
   save(data) {
     return this.http.post('/article', data);
   }
+  getByUuid(uuid){
+    return this.http.get(`/categories/${uuid}`);
+  }
 }
