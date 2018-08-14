@@ -4,8 +4,18 @@ const ClientException = require('../exceptions/ClientException');
 module.exports = {
     toObject(article) {
         const art = {...article};
+        // titre
+        // soustitre
+        // cash
+        // mensualite
+        // images
         try {
             art.fiche = JSON.parse(art.fiche);
+            if(art.fiche.titre) art.titre = art.fiche.titre;
+            if(art.fiche.soustitre) art.soustitre = art.fiche.soustitre;
+            if(art.fiche.cash) art.cash = art.fiche.cash;
+            if(art.fiche.mensualite) art.mensualite = art.fiche.mensualite;
+            if(art.fiche.images) art.images = art.fiche.images;
         } catch(e) {
             // raf
         }
@@ -17,21 +27,15 @@ module.exports = {
 
         return await Db.query(
             `INSERT INTO articles VALUES (
-                uuid(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                uuid(), ?, ?, ?, ?, ?, ?, ?
             )`,
             [
                 // uuid
                 article.categorie, //categorie
                 new Date(), //date_insertion
-                article.titre, // titre
-                article.description, //description
-                prixCash, //prix_cash
                 mensualite, //mensualite
                 'MGA', //currency
-                null, //location_geo
-                article.lieu, //lieu
-                article.adresse, //adresse
-                null, //utilisateur_id, 
+                null, //utilisateur_id,
                 JSON.stringify(article.fiche), // informations
                 0, // pinned
             ]
@@ -74,11 +78,11 @@ module.exports = {
             WHERE 1 = 1
         `;
         if(params.prix_min && params.prix_min !== '-') {
-            sql += ` AND prix_cash >= ? `;
+            sql += ` AND fiche->"$.cash" >= ? `;
             parameters.push(params.prix_min);
         }
         if(params.prix_max && params.prix_max !== '-') {
-            sql += ` AND prix_cash <= ? `;
+            sql += ` AND fiche->"$.cash" <= ? `;
             parameters.push(params.prix_max);
         }
         if(params.categorie && params.categorie !== '-') {

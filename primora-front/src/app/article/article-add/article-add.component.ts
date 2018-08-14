@@ -67,6 +67,11 @@ export class ArticleAddComponent implements OnInit {
 
   previous(current) {
     this.currentStep = --current;
+    if(this.currentStep < -1) this.currentStep = -1;
+    if(this.currentStep <= -1) {
+      this.fiche = [];
+      this.totalStep = null;
+    }
   }
 
   updateFiles(files, key) {
