@@ -67,7 +67,6 @@ export class FilterComponent implements OnInit {
     prix_max: '-'
   };
 
-
   constructor(
     private route: ActivatedRoute,
     private router: Router
