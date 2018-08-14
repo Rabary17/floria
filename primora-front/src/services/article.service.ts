@@ -27,8 +27,7 @@ export class ArticleService{
 
 	getArticlesDetails(id){
 		return this.http
-      .get('/article/${id}')
-      .pipe(map(res=>res));
+      .get(`/article/${id}`);
 	}
 
 }
