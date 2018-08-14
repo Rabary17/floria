@@ -14,34 +14,46 @@
     <div class="traite">
       <!--span>A partir de <strong>556.000 Ar</strong>/mois</span-->
     </div>
+
     <div class="price">
       <span>{{ fiche.cash }} Ar</span>
     </div>
-    <h2>{{ fiche.titre }}</h2>
-    <h3>{{ fiche.soustitre }}</h3>
-    <p>{{ fiche.description }}</p>
-    <div *ngFor="let cat of ficheCategorie">
-        <table id="caracteristique">
-            <tr>
-              <th colspan="2">
-                {{ cat.label.fr }}
-              </th>
-            </tr>
-            <tr *ngFor="let ficheItem of cat?.fiche">
-              <td>
-                  {{ ficheItem.label.fr }}
-              </td>
-              <td>
-                  {{ fiche[ficheItem.key] }}
-              </td>
-            </tr>
-          </table>
+
+    <div class="item-split">
+        <h2>{{ fiche.titre }}</h2>
+        <h3>{{ fiche.soustitre }}</h3>
+        <p>{{ fiche.description }}</p>
     </div>
 
-  </div>
+    <div class="item-split">
+      <mat-card>
+        <app-simulation-credit></app-simulation-credit>
+      </mat-card>
+    </div>
 
-  <div>
-    <app-simulation-credit></app-simulation-credit>
-    <button routerLink="/banque">Je demande mon financement</button>
+    <mat-card>
+      <div *ngFor="let cat of ficheCategorie">
+          <table id="caracteristique">
+              <tr>
+                <th colspan="2">
+                  {{ cat.label.fr }}
+                </th>
+              </tr>
+              <tr *ngFor="let ficheItem of filterFiche(cat?.fiche)">
+                <td>
+                    {{ ficheItem.label.fr }}
+                </td>
+                <td>
+                    {{ fiche[ficheItem.key] }}
+                </td>
+              </tr>
+            </table>
+      </div>
+
+      <div>
+        <button mat-raised-button class="pointer" routerLink="/banque">Je demande mon financement</button>
+      </div>
+    </mat-card>
+
   </div>
 </div>
