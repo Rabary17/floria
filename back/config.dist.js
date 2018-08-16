@@ -3,13 +3,14 @@ module.exports = {
     database: {
         host     : 'localhost',
         user     : 'root',
-        password : 'root',
+        password : 'r00t',
         database : 'primora'
     },
     api: {
         allowedOrigin: [
             'http://localhost:3000',
-            'http://localhost:4200'
+            'http://localhost:4200',
+            'http://52.169.54.188'
         ]
     },
     medias: {
