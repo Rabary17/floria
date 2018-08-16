@@ -1,14 +1,14 @@
 export class Article {
   constructor(
-    public uid: string,
-    public titre: string,
-    public subtitle: string,
-    public description: string,
+    public uuid: string,
+    public titre: any,
+    public soustitre: any,
+    public description: any,
     public date: string,
-    public prix_cash: string,
+    public cash: string,
     public currency: string,
     public lieu: string,
-    public image: string,
+    public images: Array<string>,
     public categorie: string,
     public mensualite: string
   ) {}
