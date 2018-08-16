@@ -1,16 +1,10 @@
 <header>
-  <!--div>
-    <div><a href="#">LOGO</a></div>
-    <div>MENU
-      <ul>
-        <li><a [routerLink]="['/accueil']">Accueil</a></li>
-        <li><a [routerLink]="['/ajouter']">add</a></li>
-      </ul>
-    </div>
-  </div-->
-
-<mat-menu #appMenu="matMenu">
-  <button mat-menu-item>Settings</button>
-  <button mat-menu-item>Help</button>
-</mat-menu>
+  <div class="topnav" id="myTopnav">
+    <a class="active" [routerLink]="['/accueil']">Accueil</a>
+    <a [routerLink]="['/ajouter']">Vendre</a>
+    <a href="#">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </header>
