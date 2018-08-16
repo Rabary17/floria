@@ -24,6 +24,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileSelectDirective } from 'ng2-file-upload';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import { SimpleSearchComponent } from './simple-search/simple-search.component';
+
 
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageResultComponent } from './page-result/page-result.component';
@@ -53,6 +55,7 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     PageContactComponent,
     FileSelectDirective,
     TopMenuComponent,
+    SimpleSearchComponent,
   ],
   imports: [
     BrowserModule,

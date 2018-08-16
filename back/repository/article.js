@@ -93,7 +93,14 @@ module.exports = {
             sql += ` AND mensualite = ? `;
             parameters.push(parseFloat(params.mensualite));
         }
+        if(params.term && params.term !== '') {
+            sql += ` AND (LOWER(fiche->"$.titre") LIKE ? OR LOWER(fiche->"$.description") LIKE ? OR LOWER(fiche->"$.soustitre") LIKE ?) `;
+            parameters.push(`%${params.term.toLowerCase()}%`);
+            parameters.push(`%${params.term.toLowerCase()}%`);
+            parameters.push(`%${params.term.toLowerCase()}%`);
+        }
         sql += ` LIMIT 20 `;
+        console.log(sql);
         return Db.queryAll(sql, parameters);
     }
 };
