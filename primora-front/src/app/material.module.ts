@@ -14,6 +14,7 @@ import {
   MatIconModule,
   MatSlideToggleModule,
   MatProgressBarModule,
+  MatMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -31,6 +32,7 @@ import {
     MatIconModule,
     MatSlideToggleModule,
     MatProgressBarModule,
+    MatMenuModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -46,6 +48,7 @@ import {
     MatIconModule,
     MatSlideToggleModule,
     MatProgressBarModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule {}
