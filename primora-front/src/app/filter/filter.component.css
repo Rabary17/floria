@@ -77,10 +77,10 @@ h2 {
   margin: 0;
   padding: 0.7em;
 }
-.search-tours-title-wrapper {
+/*.search-tours-title-wrapper {
   background: #31353e;
   padding-left: 0.5em;
-}
+}*/
 .search-tours-col-bg-default {
   background: #ee4136;
   padding: 1em;
@@ -134,67 +134,49 @@ h2 {
 @media (min-width: 1516px) {
   .form-item {
     display: inline-block;
-    width: 17.2%;
+    width: calc(18.98% - 22px);
   }
 }
-@media (min-width: 1428px) and (max-width:1515px) {
+@media (min-width:320px) {
   .form-item {
     display: inline-block;
-    width: 17%;
+    width: calc(18% - 22px);
   }
 }
-@media (min-width: 1352px) and (max-width:1427px) {
+@media (min-width:481px)  {
   .form-item {
     display: inline-block;
-    width: 16.8%;
+    width: calc(18.1% - 22px);
   }
 }
-@media (min-width: 1284px) and (max-width:1351px) {
+@media (min-width:641px)  {
   .form-item {
     display: inline-block;
-    width: 16.6%;
+    width: calc(18.2% - 22px);
   }
 }
-@media (min-width: 1224px) and (max-width:1283px) {
+@media (min-width:961px)  {
   .form-item {
     display: inline-block;
-    width: 16.4%;
+    width: calc(18.3% - 22px);
   }
 }
-@media (min-width: 1170px) and (max-width:1223px) {
+@media (min-width:1025px) {
   .form-item {
     display: inline-block;
-    width: 16.2%;
+    width: calc(18.4% - 22px);
   }
 }
-@media (min-width: 1121px) and (max-width:1169px) {
+@media (min-width:1281px) {
   .form-item {
     display: inline-block;
-    width: 16%;
+    width: calc(18.7% - 22px);
   }
 }
-@media (min-width: 1077px) and (max-width:1120px) {
+@media (min-width: 1650px) {
   .form-item {
     display: inline-block;
-    width: 15.8%;
-  }
-}
-@media (min-width: 1038px) and (max-width:1076px) {
-  .form-item {
-    display: inline-block;
-    width: 15.6%;
-  }
-}
-@media (min-width: 1001px) and (max-width:1037px) {
-  .form-item {
-    display: inline-block;
-    width: 15.4%;
-  }
-}
-@media (min-width: 992px) and (max-width:1000px) {
-  .form-item {
-    display: inline-block;
-    width: 15.2%;
+    width: calc(18.98% - 22px);
   }
 }
 @media (max-width: 991px) {
