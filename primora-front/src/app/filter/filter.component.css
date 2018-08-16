@@ -131,54 +131,52 @@ h2 {
     padding-right: 0;
   }
 }
-@media (min-width: 1516px) {
-  .form-item {
-    display: inline-block;
-    width: calc(18.98% - 22px);
-  }
-}
+
+
+
 @media (min-width:320px) {
   .form-item {
     display: inline-block;
-    width: calc(18% - 22px);
+    width: 33.33%;
   }
 }
 @media (min-width:481px)  {
   .form-item {
     display: inline-block;
-    width: calc(18.1% - 22px);
+    width: 25%;
   }
 }
 @media (min-width:641px)  {
   .form-item {
     display: inline-block;
-    width: calc(18.2% - 22px);
+    width: 14.28%;
   }
 }
 @media (min-width:961px)  {
   .form-item {
     display: inline-block;
-    width: calc(18.3% - 22px);
+    width: 14.28%;
   }
 }
 @media (min-width:1025px) {
   .form-item {
     display: inline-block;
-    width: calc(18.4% - 22px);
+    width: 14.28%;
   }
 }
 @media (min-width:1281px) {
   .form-item {
     display: inline-block;
-    width: calc(18.7% - 22px);
+    width: 14.28%;
   }
 }
 @media (min-width: 1650px) {
   .form-item {
     display: inline-block;
-    width: calc(18.98% - 22px);
+    width: 14.28%;
   }
 }
+
 @media (max-width: 991px) {
   .search-tours > .container {
     width: 100%;
@@ -189,7 +187,7 @@ h2 {
     }
   }
 }
-g-heading-v8 .h2 {
+.g-heading-v8 .h2 {
   text-transform: uppercase;
   font-size: 40px;
   font-weight: 700;
@@ -232,7 +230,7 @@ g-heading-v8 .h2 {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
-  line-height: auto;
+  line-height: normal;
   margin: 0 0 5px;
   color: #383339;
 }
@@ -241,7 +239,7 @@ g-heading-v8 .h2 {
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
-  line-height: auto;
+  line-height: normal;
   margin: 0 0 5px;
   color: #383339;
 }
