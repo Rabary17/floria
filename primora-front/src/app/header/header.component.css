@@ -52,3 +52,24 @@
     text-align: left;
   }
 }
+.rapid-search {
+    float: left;
+    text-align: left;
+}
+.search-icon {
+    float: left;
+}
+.search-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.topnav {
+    display: flex;
+}
+.search-container {
+    position: absolute;
+    right: 0;
+}
