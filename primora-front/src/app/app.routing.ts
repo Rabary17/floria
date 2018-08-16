@@ -13,6 +13,7 @@ import {PageHomeComponent} from './page-home/page-home.component';
 import {PageResultComponent} from './page-result/page-result.component';
 import {PageFicheArticleComponent} from './page-fiche-article/page-fiche-article.component';
 import {PageAddArticleComponent} from './page-add-article/page-add-article.component';
+import {PageContactComponent} from './page-contact/page-contact.component';
 
 
 const appRoutes: Routes = [
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     { path: 'result/:data', component: PageResultComponent },
     { path: 'fiche', component: PageFicheArticleComponent },
     { path: 'ajouter', component: PageAddArticleComponent },
-  ];
+    { path: 'contact', component: PageContactComponent },
+];
 
   @NgModule({
     imports: [

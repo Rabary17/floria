@@ -20,14 +20,16 @@ import { LoginComponent } from './login/login.component';
 import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
 import { ArticleAddComponent } from './article/article-add/article-add.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
-import { PageHomeComponent } from './page-home/page-home.component';
-import { PageResultComponent } from './page-result/page-result.component';
-import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
-import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileSelectDirective } from 'ng2-file-upload';
 import {SlideshowModule} from 'ng-simple-slideshow';
+
+import { PageHomeComponent } from './page-home/page-home.component';
+import { PageResultComponent } from './page-result/page-result.component';
+import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
+import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
+import { PageContactComponent } from './page-contact/page-contact.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     PageResultComponent,
     PageFicheArticleComponent,
     PageAddArticleComponent,
+    PageContactComponent,
     FileSelectDirective,
     TopMenuComponent,
   ],

@@ -1,16 +1,16 @@
 <div class="article">
   <h2>
-    Ajouter un article
+    Ajouter une annonce
   </h2>
 
   <div *ngIf="currentStep === -1">
+    <p>Choisissez la catégorie de votre annonce</p>
     <mat-list>
       <mat-list-item
         *ngFor="let cat of categories"
         class="pointer"
         (click)="selectCategorie(cat.uuid)">
         {{ cat.nom.fr }}
-
         <mat-divider></mat-divider>
       </mat-list-item>
     </mat-list>
