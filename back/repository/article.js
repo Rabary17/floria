@@ -100,7 +100,6 @@ module.exports = {
             parameters.push(`%${params.term.toLowerCase()}%`);
         }
         sql += ` LIMIT 20 `;
-        console.log(sql);
         return Db.queryAll(sql, parameters);
     }
 };
