@@ -13,7 +13,7 @@ export class ArticleDetailComponent implements OnInit {
   id: number;
   private sub: any;
 
-  fiche = {};
+  fiche: any = {};
   ficheCategorie = [];
   ficheImages = [];
 
