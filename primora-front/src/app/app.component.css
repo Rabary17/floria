@@ -1,0 +1,9 @@
+.outlet-container {
+  margin: auto 10%;
+}
+
+@media (max-width:641px)  {
+  .outlet-container {
+    margin: auto;
+  }
+}
