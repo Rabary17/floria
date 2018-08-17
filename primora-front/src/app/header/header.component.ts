@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public logo;
+  public menuDisplay: boolean = false;
   constructor() { }
 
   ngOnInit() {
-    // this.logo = this.logo;
+  }
+
+  toggleMenu() {
+    this.menuDisplay = ! this.menuDisplay;
+    console.log(this.menuDisplay);
   }
 }
