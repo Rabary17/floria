@@ -15,12 +15,17 @@
 
 .topnav > *:hover {
   background-color: #F2F2F0;
-  color: black;
+  color: var(--third-color);
 }
 
 .active {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: #0096c4;
+  color: #ffffff;
+}
+
+.logo {
+    background-color: #020e27;
+    color: #ffffff;
 }
 
 .topnav .icon {
