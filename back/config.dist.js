@@ -14,6 +14,6 @@ module.exports = {
         ]
     },
     medias: {
-        uploadDir: './uploads/'
+        uploadDir: '/var/www/primora/uploads/'
     }
 };
