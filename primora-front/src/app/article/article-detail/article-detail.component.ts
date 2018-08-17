@@ -13,7 +13,7 @@ export class ArticleDetailComponent implements OnInit {
   id: number;
   private sub: any;
 
-  fiche = {};
+  fiche: any = {};
   ficheCategorie = [];
   ficheImages = [];
 
@@ -30,7 +30,6 @@ export class ArticleDetailComponent implements OnInit {
       this.articleService.getArticlesDetails(this.id).subscribe(article => {
         this.categorieService.getByUuid(article.categorie).subscribe(categorie => {
           this.ficheCategorie = categorie.fiche;
-          console.log(this.ficheCategorie);
         });
         this.fiche = article.fiche;
         this.ficheImages = this.getImages(article.fiche.images)
@@ -41,9 +40,15 @@ export class ArticleDetailComponent implements OnInit {
   filterFiche(fiche) {
     return fiche.filter(item => item.key !== 'images');
   }
+
   getImages(files) {
     if(typeof files === 'undefined') return [];
     return files.map(item => this.mediaService.getImage(item));
   }
 
+  boolDisplay(value) {
+    if(value === true) return 'Oui';
+    if(value === false) return 'Oui';
+    else return '-';
+  }
 }

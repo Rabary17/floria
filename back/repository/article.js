@@ -79,11 +79,11 @@ module.exports = {
         `;
         if(params.prix_min && params.prix_min !== '-') {
             sql += ` AND fiche->"$.cash" >= ? `;
-            parameters.push(params.prix_min);
+            parameters.push(parseFloat(params.prix_min));
         }
         if(params.prix_max && params.prix_max !== '-') {
             sql += ` AND fiche->"$.cash" <= ? `;
-            parameters.push(params.prix_max);
+            parameters.push(parseFloat(params.prix_max));
         }
         if(params.categorie && params.categorie !== '-') {
             sql += ` AND categorie = ? `;
@@ -91,9 +91,15 @@ module.exports = {
         }
         if(params.mensualite && params.mensualite !== '-') {
             sql += ` AND mensualite = ? `;
-            parameters.push(params.mensualite);
+            parameters.push(parseFloat(params.mensualite));
         }
-        sql += ` LIMIT 20 `;
+        if(params.term && params.term !== '') {
+            sql += ` AND (LOWER(fiche->"$.titre") LIKE ? OR LOWER(fiche->"$.description") LIKE ? OR LOWER(fiche->"$.soustitre") LIKE ?) `;
+            parameters.push(`%${params.term.toLowerCase()}%`);
+            parameters.push(`%${params.term.toLowerCase()}%`);
+            parameters.push(`%${params.term.toLowerCase()}%`);
+        }
+        sql += ` ORDER BY date_insertion LIMIT 20 `;
         return Db.queryAll(sql, parameters);
     }
 };

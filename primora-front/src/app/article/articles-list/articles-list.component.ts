@@ -21,7 +21,7 @@ export class ArticlesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.load();
+    this.load();
   }
 
   load(apiurl: string = null) {

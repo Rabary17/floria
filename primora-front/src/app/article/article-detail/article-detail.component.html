@@ -16,13 +16,13 @@
     </div>
 
     <div class="price">
-      <span>{{ fiche.cash }} Ar</span>
+      <span class="font-size-16">{{ fiche?.cash }} Ar</span>
     </div>
 
     <div class="item-split">
-        <h2>{{ fiche.titre }}</h2>
-        <h3>{{ fiche.soustitre }}</h3>
-        <p>{{ fiche.description }}</p>
+        <h2>{{ fiche?.titre }}</h2>
+        <h3>{{ fiche?.soustitre }}</h3>
+        <p>{{ fiche?.description }}</p>
     </div>
 
     <div class="item-split">
@@ -44,7 +44,13 @@
                     {{ ficheItem.label.fr }}
                 </td>
                 <td>
+                  <span *ngIf="ficheItem.type === 'bool'">
+                    {{ boolDisplay(fiche[ficheItem.key]) }}
+                  </span>
+                  <span *ngIf="ficheItem.type !== 'bool'">
                     {{ fiche[ficheItem.key] }}
+                  </span>
+
                 </td>
               </tr>
             </table>
