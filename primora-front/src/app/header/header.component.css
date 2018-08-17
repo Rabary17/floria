@@ -1,12 +1,12 @@
 .topnav {
-  background-color: rgba(49, 53, 62, .8);
+  background-color: #113245;
   overflow: hidden;
 }
 
 .topnav > * {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #f2f2f0;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -14,12 +14,17 @@
 }
 
 .topnav > *:hover {
-  background-color: #ddd;
+  background-color: #F2F2F0;
   color: black;
 }
 
 .active {
-  background-color: #31353e;
+  background-color: #638FA1;
+  color: white;
+}
+
+.logo {
+  background-color: #071527;
   color: white;
 }
 
