@@ -68,16 +68,3 @@
     width: 100%;
   }
 }
-
-.bankForm {
-  background-color: #ee4136;
-  color: white;
-  margin-bottom: 15px;
-  padding-bottom: 12px;
-  padding-top: 12px;
-  padding-left: 7px;
-  font-weight: bold;
-}
-.bankForm-form {
-  margin-bottom: 15px;
-}
