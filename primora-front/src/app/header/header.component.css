@@ -1,5 +1,5 @@
 .topnav {
-  background-color: #113245;
+  background-color: var(--third-color);
   overflow: hidden;
 }
 
@@ -19,12 +19,7 @@
 }
 
 .active {
-  background-color: #638FA1;
-  color: white;
-}
-
-.logo {
-  background-color: #071527;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -41,6 +36,11 @@
 .topnav > .search-container {
     float: right;
     height: 20px;
+}
+
+.rapid-search {
+  float: left;
+  text-align: left;
 }
 
 @media screen and (max-width: 600px) {
@@ -70,11 +70,10 @@
     display: block;
     text-align: left;
   }
-}
 
-.rapid-search {
-  float: left;
-  text-align: left;
+  .rapid-search {
+    float: none;
+  }
 }
 
 .search-icon {
@@ -90,6 +89,6 @@
 }
 
 .search-button :hover {
-  color: #ee4136;
+  color: var(--secondary-color);
 }
 
