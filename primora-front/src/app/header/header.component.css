@@ -33,8 +33,9 @@
   text-align: left;
 }
 
-.topnav > *.search-container {
+.topnav > .search-container {
     float: right;
+    height: 20px;
 }
 
 @media screen and (max-width: 600px) {
