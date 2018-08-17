@@ -38,6 +38,11 @@
     height: 20px;
 }
 
+.rapid-search {
+  float: left;
+  text-align: left;
+}
+
 @media screen and (max-width: 600px) {
   .topnav > *:not(:first-child) {
     display: none;
@@ -65,11 +70,10 @@
     display: block;
     text-align: left;
   }
-}
 
-.rapid-search {
-  float: left;
-  text-align: left;
+  .rapid-search {
+    float: none;
+  }
 }
 
 .search-icon {
