@@ -11,7 +11,11 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.logo = this.logo;
+  }
+
+  toggleMenu() {
+    this.menuDisplay = ! this.menuDisplay;
+    console.log(this.menuDisplay);
   }
 
   toogleMenu() {
