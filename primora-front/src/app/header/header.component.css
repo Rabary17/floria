@@ -1,3 +1,9 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+}
 .topnav {
   background-color: var(--third-color);
   overflow: hidden;
@@ -98,7 +104,7 @@
 }
 
 .topnav .search-container{
-  height: 50px;
+  height: 49px;
   padding: 0 15px;
   line-height: 50px;
 }
