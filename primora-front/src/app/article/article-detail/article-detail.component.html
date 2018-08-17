@@ -44,7 +44,13 @@
                     {{ ficheItem.label.fr }}
                 </td>
                 <td>
+                  <span *ngIf="ficheItem.type === 'bool'">
+                    {{ boolDisplay(fiche[ficheItem.key]) }}
+                  </span>
+                  <span *ngIf="ficheItem.type !== 'bool'">
                     {{ fiche[ficheItem.key] }}
+                  </span>
+
                 </td>
               </tr>
             </table>

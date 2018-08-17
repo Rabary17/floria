@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategorieService } from '../../../services/categorie.service';
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -25,7 +26,9 @@ export class ArticleAddComponent implements OnInit {
   };
 
   constructor(
-    private categorieService: CategorieService
+    private categorieService: CategorieService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,15 +40,8 @@ export class ArticleAddComponent implements OnInit {
   }
 
   add() {
-    console.log(this.formData);
     this.categorieService.save(this.formData).subscribe(result => {
-      /*
-      if(res.affectedRows) {
-
-      } else {
-        // TODO error
-      }
-      */
+      this.router.navigate(['/add-success']);
     });
   }
 

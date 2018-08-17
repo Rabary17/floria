@@ -32,6 +32,7 @@ import { PageResultComponent } from './page-result/page-result.component';
 import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-article.component';
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
+import { PageAddSuccessComponent } from './page-add-success/page-add-success.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     PageFicheArticleComponent,
     PageAddArticleComponent,
     PageContactComponent,
+    PageAddSuccessComponent,
     TopMenuComponent,
     SimpleSearchComponent,
   ],

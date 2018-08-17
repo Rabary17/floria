@@ -43,4 +43,9 @@ export class UploadFileComponent implements OnInit {
       });
     }
   }
+
+  barColor(progression) {
+    if(progression === 100) return 'primary';
+    else return 'warn';
+  }
 }
