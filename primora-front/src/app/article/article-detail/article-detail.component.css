@@ -8,7 +8,7 @@
 }
 
 .article-show-left h2 {
-  color: #ee4136;
+  color: var(--secondary-color);
 }
 
 .article-show-left h3 {
@@ -23,11 +23,11 @@
 }
 
 .traite {
-  background-color: #ee4136;
+  background-color: var(--secondary-color);
 }
 
 .price {
-  background-color: #31353e;
+  background-color: var(--primary-color);
 }
 
 /* TABLEAU DEBUT */

@@ -1,5 +1,5 @@
 .topnav {
-  background-color: rgba(49, 53, 62, .8);
+  background-color: var(--third-color);
   overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .active {
-  background-color: #31353e;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -85,6 +85,6 @@
 }
 
 .search-button :hover {
-  color: #ee4136;
+  color: var(--secondary-color);
 }
 
