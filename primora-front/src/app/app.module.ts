@@ -25,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { SimpleSearchComponent } from './simple-search/simple-search.component';
+import { HomeSliderComponent } from './home-slider/home-slider.component';
 
 
 import { PageHomeComponent } from './page-home/page-home.component';
@@ -57,6 +58,7 @@ import { PageAddSuccessComponent } from './page-add-success/page-add-success.com
     PageAddSuccessComponent,
     TopMenuComponent,
     SimpleSearchComponent,
+    HomeSliderComponent,
   ],
   imports: [
     BrowserModule,

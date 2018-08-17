@@ -2,6 +2,10 @@
   margin: auto 10%;
 }
 
+.margin {
+  margin-top: 48px;
+}
+
 @media (max-width:641px)  {
   .outlet-container {
     margin: auto;

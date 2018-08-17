@@ -6,6 +6,7 @@ const Config = require('../config');
 const path = require('path');
 const uuidv4 = require('uuid/v4');
 const fs = require('fs');
+const sharp = require('sharp');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -15,16 +16,27 @@ const storage = multer.diskStorage({
         cb(null, uuidv4() + '.' + path.extname(file.originalname).replace(/^./, ''));
     }
 });
-const upload = multer({storage: storage});
-
-Router.post('/', upload.single('photo'), async function(req, res, next) {
-    try {
-        res.status(200).json({
-            filename: req.file.filename
-        });
-    } catch(e) {
-        return Response.sendError(res, e);
+const upload = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        if (!file.mimetype.match(/image/)) {
+            return cb(new Error('Only image files are allowed!'), false);
+        }
+        cb(null, true);
     }
+});
+
+Router.post('/', upload.single('photo'), function(req, res, next) {
+    sharp(req.file.path).resize(640).toBuffer((err, buffer) => {
+        if (err) {
+            return Response.sendError(res, err);
+        }
+        fs.writeFile(req.file.path, buffer, (e) => {
+            res.status(200).json({
+                filename: req.file.filename
+            });
+        });
+    });
 });
 
 Router.get('/:file', async function(req, res, next) {

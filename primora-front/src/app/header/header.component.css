@@ -1,3 +1,9 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+}
 .topnav {
   background-color: var(--third-color);
   overflow: hidden;
@@ -15,12 +21,17 @@
 
 .topnav > *:hover {
   background-color: #F2F2F0;
-  color: black;
+  color: var(--third-color);
 }
 
 .active {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: #0096c4;
+  color: #ffffff;
+}
+
+.logo {
+    background-color: #020e27;
+    color: #ffffff;
 }
 
 .topnav .icon {
@@ -93,7 +104,7 @@
 }
 
 .topnav .search-container{
-  height: 50px;
+  height: 49px;
   padding: 0 15px;
   line-height: 50px;
 }

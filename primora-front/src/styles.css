@@ -76,19 +76,17 @@ mat-form-field {
 .clear {
   clear: both;
 }
-
-
 .mat-select-content{
   background-color: #eee !important;
 }
-
 .mat-option {
   color: #001f5e;
-  
 }
-
-.mat-option::hover {
+.mat-option:hover {
   background-color: #999;
   color: #001f5e;
-  
+
+}
+.color-black {
+  color: black;
 }
