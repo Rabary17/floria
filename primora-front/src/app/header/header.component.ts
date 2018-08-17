@@ -15,12 +15,5 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.menuDisplay = ! this.menuDisplay;
-    console.log(this.menuDisplay);
   }
-
-  toogleMenu() {
-    this.menuDisplay = !this.menuDisplay;
-    
-  }
-
 }
