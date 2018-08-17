@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 
 :root {
-  --primary-color: #31353e;
-  --secondary-color: #ee4136;
-  --third-color: #31353e;
+  --primary-color: #001f5e;
+  --secondary-color: #0096c4;
+  --third-color: #001f5e;
 }
 
 html, body {
@@ -75,4 +75,20 @@ mat-form-field {
 }
 .clear {
   clear: both;
+}
+
+
+.mat-select-content{
+  background-color: #eee !important;
+}
+
+.mat-option {
+  color: #001f5e;
+  
+}
+
+.mat-option::hover {
+  background-color: #999;
+  color: #001f5e;
+  
 }

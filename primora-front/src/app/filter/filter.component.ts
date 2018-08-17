@@ -10,6 +10,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
   providers: [HttpService]
 })
 export class FilterComponent implements OnInit {
+
   categorie = [
     {
       uuid: '-',
@@ -65,7 +66,6 @@ export class FilterComponent implements OnInit {
     prix_min: '-',
     prix_max: '-'
   };
-
 
   constructor(
     private route: ActivatedRoute,
