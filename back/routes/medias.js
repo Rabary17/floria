@@ -5,7 +5,7 @@ const multer = require('multer');
 const Config = require('../config');
 const path = require('path');
 const uuidv4 = require('uuid/v4');
-const Fs = require('fs');
+const fs = require('fs');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -29,7 +29,15 @@ Router.post('/', upload.single('photo'), async function(req, res, next) {
 
 Router.get('/:file', async function(req, res, next) {
     try {
-        res.sendFile(`${Config.medias.uploadDir}/${req.params.file}`);
+        const filename = `${Config.medias.uploadDir}/${req.params.file}`;
+        fs.stat(filename, (err, stats) => {
+            if (err) {
+                // Send blank image
+                res.sendFile(`${__dirname.replace('routes', 'samples')}/blank-image.jpeg`);
+            } else {
+                res.sendFile(filename);
+            }
+        });
     } catch(e) {
         return Response.sendError(res, e);
     }
@@ -37,7 +45,7 @@ Router.get('/:file', async function(req, res, next) {
 
 Router.delete('/:file', async function(req, res, next) {
     try {
-        Fs.unlink(`${Config.medias.uploadDir}/${req.params.file}`, error => {
+        fs.unlink(`${Config.medias.uploadDir}/${req.params.file}`, error => {
             if (error) {
                 return Response.sendError(res, error);
             }
