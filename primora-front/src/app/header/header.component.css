@@ -33,6 +33,10 @@
   text-align: left;
 }
 
+.topnav > *.search-container {
+    float: right;
+}
+
 @media screen and (max-width: 600px) {
   .topnav > *:not(:first-child) {
     display: none;
@@ -83,11 +87,3 @@
   color: #ee4136;
 }
 
-.topnav {
-  display: flex;
-}
-
-.search-container {
-  position: absolute;
-  right: 0;
-}
