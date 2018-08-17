@@ -1,9 +1,9 @@
 <header>
   <div [ngClass]="{'topnav': true, 'responsive': menuDisplay}">
-    <a class="active" [routerLink]="['/accueil']">PRIMORA</a>
-    <a [routerLink]="['/accueil']">Accueil</a>
-    <a [routerLink]="['/ajouter']">Vendre</a>
-    <a [routerLink]="['/contact']">Contact</a>
+    <a class="logo" [routerLink]="['/accueil']">PRIMORA</a>
+    <a [routerLink]="['/accueil']" routerLinkActive="active">Accueil</a>
+    <a [routerLink]="['/ajouter']" routerLinkActive="active">Vendre</a>
+    <a [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
     <div class="search-container">
       <app-simple-search class="search rapid-search"></app-simple-search>
     </div>
@@ -12,3 +12,4 @@
     </a>
   </div>
 </header>
+<a ng-class="getClass('/tasks')" href="/tasks">Tasks</a>

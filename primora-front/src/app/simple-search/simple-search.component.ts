@@ -8,6 +8,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./simple-search.component.css']
 })
 export class SimpleSearchComponent implements OnInit {
+  public searchText: string = '';
 
   constructor(
     private articleservice: ArticleService,
@@ -19,10 +20,16 @@ export class SimpleSearchComponent implements OnInit {
   }
 
   search(event: any) {
-    if(event.keyCode === 13 && event.target.value) {
+    if(event) {
+      if (event.keyCode === 13 && event.target.value) {
+        this.router.navigate(['result/' + btoa(JSON.stringify({
+          term: event.target.value
+        }))]);
+      }
+    } else {
       this.router.navigate(['result/' + btoa(JSON.stringify({
-        term: event.target.value
-      })) ]);
+        term: this.searchText
+      }))]);
     }
   }
 }

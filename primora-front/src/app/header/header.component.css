@@ -7,14 +7,14 @@
 .topnav > * {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #f2f2f0;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .topnav > *:hover {
-  background-color: #ddd;
+  background-color: #F2F2F0;
   color: black;
 }
 
@@ -36,6 +36,11 @@
 .topnav > .search-container {
     float: right;
     height: 20px;
+}
+
+.rapid-search {
+  float: left;
+  text-align: left;
 }
 
 @media screen and (max-width: 600px) {
@@ -65,11 +70,10 @@
     display: block;
     text-align: left;
   }
-}
 
-.rapid-search {
-  float: left;
-  text-align: left;
+  .rapid-search {
+    float: none;
+  }
 }
 
 .search-icon {
