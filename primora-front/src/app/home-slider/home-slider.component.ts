@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-slider.component.css']
 })
 export class HomeSliderComponent implements OnInit {
-  public images: Array<string> = ['assets/home-slide/1.png','assets/home-slide/2.png','assets/home-slide/3.png'];
+  public images: Array<string> = ['assets/home-slide/1.jpg','assets/home-slide/2.jpg','assets/home-slide/3.jpg'];
 
   constructor() { }
 
