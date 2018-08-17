@@ -99,7 +99,7 @@ module.exports = {
             parameters.push(`%${params.term.toLowerCase()}%`);
             parameters.push(`%${params.term.toLowerCase()}%`);
         }
-        sql += ` LIMIT 20 `;
+        sql += ` ORDER BY date_insertion LIMIT 20 `;
         return Db.queryAll(sql, parameters);
     }
 };

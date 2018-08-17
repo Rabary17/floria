@@ -1,7 +1,6 @@
 .topnav {
   background-color: rgba(49, 53, 62, .8);
   overflow: hidden;
-  position: relative;
 }
 
 .topnav > * {
