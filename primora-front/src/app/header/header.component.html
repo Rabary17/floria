@@ -1,5 +1,5 @@
 <header>
-  <div class="topnav" id="myTopnav">
+  <div [ngClass]="{'topnav': true, 'responsive': menuDisplay}">
     <a class="active" [routerLink]="['/accueil']">PRIMORA</a>
     <a [routerLink]="['/accueil']">Accueil</a>
     <a [routerLink]="['/ajouter']">Vendre</a>
@@ -7,7 +7,7 @@
     <div class="search-container">
       <app-simple-search class="search rapid-search"></app-simple-search>
     </div>
-    <a href="javascript:void(0);" class="icon search-icon" onclick="myFunction()">
+    <a class="icon search-icon pointer" (click)="toggleMenu()">
       <i class="fa fa-bars"></i>
     </a>
   </div>

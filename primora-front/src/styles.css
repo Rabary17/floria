@@ -2,6 +2,12 @@
 
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 
+:root {
+  --primary-color: #31353e;
+  --secondary-color: #ee4136;
+  --third-color: #31353e;
+}
+
 html, body {
   margin: 0;
   padding: 0;

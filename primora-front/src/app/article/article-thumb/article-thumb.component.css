@@ -24,7 +24,7 @@
 
 .our-tours-list-item {
   color: rgba(255,255,255,.8);
-  background: #31353e;
+  background: var(--primary-color);
   padding-bottom: 30px;
   transition: all 0.3s ease-in-out;
 }
@@ -33,7 +33,7 @@
   overflow-y: hidden;
 }
 .our-tours-list-item:hover {
-  background: #ee4136;
+  background: var(--secondary-color);
 }
 .our-tours-list-item .img-wrapper {
   margin-bottom: 20px;
@@ -54,13 +54,13 @@
   transition: all 0.3s ease-in-out;
 }
 .our-tours-list-item:hover .g-color-default {
-  color: #31353e;
+  color: var(--primary-color);
 }
 .our-tours-list-item p {
   margin-bottom: 15px;
 }
 .our-tours-list-item:hover .our-tours-price {
-  background: #31353e;
+  background: var(--primary-color);
 }
 .our-tours-list-item h3,
 .our-tours-list-item p,
@@ -87,7 +87,7 @@
 }
 .our-tours-price {
   color: #fff;
-  background: #ee4136;
+  background: var(--secondary-color);
   display: inline-block;
   font-size: 11px;
   line-height: 1;
@@ -97,7 +97,7 @@
   width: calc(100% - 20px - 20px - 22px);
 }
 .our-tours-list-item:hover .our-tours-price {
-  background: #31353e;
+  background: var(--primary-color);
 }
 .our-tours-list-item h3,
 .our-tours-list-item p,

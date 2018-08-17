@@ -1,11 +1,11 @@
 /* Search Tours Section */
 .mat-raised-button {
   color: rgba(255, 255, 255, 0.87);
-  background-color: #31353e;
+  background-color: var(--primary-color);
 }
 .search-tours {
   position: relative;
-  background-color: #31353e;
+  background-color: var(--primary-color);
 }
 .search-tours .container {
   z-index: 2;
@@ -26,11 +26,11 @@
   font-size: 11px;
   padding: 0;
   margin-bottom: 0;
-  color: #ee4136;
+  color: var(--secondary-color);
 }
 
 .search-tours-col-bg-default {
-  background: #ee4136;
+  background: var(--secondary-color);
   padding-top: 65px;
   padding-bottom: 41px;
 }
@@ -43,7 +43,7 @@
 }
 .search-tours .sky-form .btn-u {
   margin-top: 34px;
-  background: #31353e;
+  background: var(--primary-color);
 }
 .search-tours .sky-form .btn-u:hover {
   background: #1c1e24;
@@ -78,11 +78,11 @@ h2 {
   padding: 0.7em;
 }
 /*.search-tours-title-wrapper {
-  background: #31353e;
+  background: var(--primary-color);
   padding-left: 0.5em;
 }*/
 .search-tours-col-bg-default {
-  background: #ee4136;
+  background: var(--secondary-color);
   padding: 1em;
 }
 
@@ -193,7 +193,7 @@ h2 {
   line-height: 1.3;
   position: relative;
   margin: 0 0 40px;
-  color: #31353e;
+  color: var(--primary-color);
 }
 .g-heading-v8 h2 .block-name,
 .g-heading-v8 .h2 .block-name {
@@ -201,13 +201,13 @@ h2 {
   font-style: normal;
   display: inline-block;
   color: #fff;
-  background: #31353e;
+  background: var(--primary-color);
   padding: 10px 15px;
   margin-bottom: 20px;
 }
 .g-heading-v8 h2 strong,
 .g-heading-v8 .h2 strong {
-  color: #ee4136;
+  color: var(--secondary-color);
 }
 @media(max-width: 500px) {
   .g-heading-v8 h2,
