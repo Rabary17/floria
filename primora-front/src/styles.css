@@ -55,6 +55,9 @@ mat-form-field {
 .text-left {
   text-align: left;
 }
+.font-size-18 {
+  font-size: 1.8em;
+}
 .font-size-16 {
   font-size: 1.6em;
 }

@@ -26,6 +26,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { SimpleSearchComponent } from './simple-search/simple-search.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
+import { FrenchDecimalPipe } from './FrenchDecimalPipe';
 
 
 import { PageHomeComponent } from './page-home/page-home.component';
@@ -59,6 +60,7 @@ import { PageAddSuccessComponent } from './page-add-success/page-add-success.com
     TopMenuComponent,
     SimpleSearchComponent,
     HomeSliderComponent,
+    FrenchDecimalPipe
   ],
   imports: [
     BrowserModule,
@@ -70,6 +72,7 @@ import { PageAddSuccessComponent } from './page-add-success/page-add-success.com
     MaterialModule,
     SlideshowModule,
     FileUploadModule,
+    FrenchDecimalPipe
   ],
 
   providers: [],
