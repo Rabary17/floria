@@ -35,6 +35,7 @@ import { PageFicheArticleComponent } from './page-fiche-article/page-fiche-artic
 import { PageAddArticleComponent } from './page-add-article/page-add-article.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
 import { PageAddSuccessComponent } from './page-add-success/page-add-success.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { PageAddSuccessComponent } from './page-add-success/page-add-success.com
     TopMenuComponent,
     SimpleSearchComponent,
     HomeSliderComponent,
-    FrenchDecimalPipe
+    FrenchDecimalPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
