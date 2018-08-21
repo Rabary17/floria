@@ -15,6 +15,7 @@ import {PageFicheArticleComponent} from './page-fiche-article/page-fiche-article
 import {PageAddArticleComponent} from './page-add-article/page-add-article.component';
 import {PageContactComponent} from './page-contact/page-contact.component';
 import {PageAddSuccessComponent} from './page-add-success/page-add-success.component';
+import {RegisterComponent} from './register/register.component';
 
 
 const appRoutes: Routes = [
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   {path: 'ajouter', component: PageAddArticleComponent},
   {path: 'contact', component: PageContactComponent},
   {path: 'add-success', component: PageAddSuccessComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
