@@ -29,7 +29,6 @@
   transition: all 0.3s ease-in-out;
 }
 .our-tours-list-item-description {
-  min-height: 150px;
   overflow-y: hidden;
 }
 .our-tours-list-item:hover {
@@ -69,6 +68,10 @@
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 1px;
+}
+.our-tours-price{
+  text-align: right;
+font-size: 17px;
 }
 .img-wrapper--shadow {
   position: relative;

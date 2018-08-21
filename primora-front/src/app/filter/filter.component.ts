@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from 'src/services/http.service';
+import { HttpService } from '../../services/http.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatGridListModule} from '@angular/material/grid-list';
 
