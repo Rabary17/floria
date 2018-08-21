@@ -36,6 +36,7 @@ import { PageAddArticleComponent } from './page-add-article/page-add-article.com
 import { PageContactComponent } from './page-contact/page-contact.component';
 import { PageAddSuccessComponent } from './page-add-success/page-add-success.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeSliderMobComponent } from './home-slider-mob/home-slider-mob.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { FooterComponent } from './footer/footer.component';
     SimpleSearchComponent,
     HomeSliderComponent,
     FrenchDecimalPipe,
-    FooterComponent
+    FooterComponent,
+    HomeSliderMobComponent
   ],
   imports: [
     BrowserModule,
