@@ -31,13 +31,16 @@
     </mat-card>
     <mat-card>
       <mat-form-field>
-        <input type="password" atInput placeholder="Mot de passe">
+        <input matInput type="password" placeholder="Mot de passe">
       </mat-form-field>
     </mat-card>
     
     <mat-card>
       <div>
         <button mat-raised-button class="pointer">S'enregistrer</button>
+      </div>
+      <div class="">
+        <a [routerLink]="['/login']">Se connecter</a>
       </div>
     </mat-card>
 
