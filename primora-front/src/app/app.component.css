@@ -11,3 +11,15 @@
     margin: auto;
   }
 }
+
+@media (min-width:481px)  {
+  .small-slider {
+    display: none;
+  }
+}
+
+@media (max-width:480px)  {
+  .big-slider {
+    display: none;
+  }
+}

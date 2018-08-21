@@ -2,8 +2,12 @@
   <div>
     <app-header></app-header>
     <div class="margin"></div>
-    <app-home-slider *ngIf="showHomeSlider"></app-home-slider>
-    <app-home-slider-mob *ngIf="showHomeSlider"></app-home-slider-mob>
+    <div class="big-slider">
+      <app-home-slider *ngIf="showHomeSlider"></app-home-slider>
+    </div>
+    <div class="small-slider">
+      <app-home-slider-mob *ngIf="showHomeSlider"></app-home-slider-mob>
+    </div>
     <app-filter></app-filter>
   </div>
   <div class="outlet-container">
