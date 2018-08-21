@@ -23,43 +23,48 @@
         <h2>{{ fiche?.titre }}</h2>
         <h3>{{ fiche?.soustitre }}</h3>
         <p>{{ fiche?.description }}</p>
+
+        <mat-card>
+          <div *ngFor="let cat of ficheCategorie">
+              <table id="caracteristique">
+                  <tr>
+                    <th colspan="2">
+                      {{ cat.label.fr }}
+                    </th>
+                  </tr>
+                  <tr *ngFor="let ficheItem of filterFiche(cat?.fiche)">
+                    <td>
+                        {{ ficheItem.label.fr }}
+                    </td>
+                    <td>
+                      <span *ngIf="ficheItem.type === 'bool'">
+                        {{ boolDisplay(fiche[ficheItem.key]) }}
+                      </span>
+                      <span *ngIf="ficheItem.type !== 'bool'">
+                        {{ fiche[ficheItem.key] }}
+                      </span>
+    
+                    </td>
+                  </tr>
+                </table>
+          </div>
+            
+          <div>
+              <button mat-raised-button class="pointer" routerLink="/banque">Je demande mon financement</button>
+          </div>
+        </mat-card>
     </div>
 
-    <div class="item-split">
+    <div class="item-split" style="float: right;">
+      <h2>Simuler mon credit</h2>
+      <h3>Sans engagement</h3>
       <mat-card>
         <app-simulation-credit></app-simulation-credit>
       </mat-card>
+
     </div>
 
-    <mat-card>
-      <div *ngFor="let cat of ficheCategorie">
-          <table id="caracteristique">
-              <tr>
-                <th colspan="2">
-                  {{ cat.label.fr }}
-                </th>
-              </tr>
-              <tr *ngFor="let ficheItem of filterFiche(cat?.fiche)">
-                <td>
-                    {{ ficheItem.label.fr }}
-                </td>
-                <td>
-                  <span *ngIf="ficheItem.type === 'bool'">
-                    {{ boolDisplay(fiche[ficheItem.key]) }}
-                  </span>
-                  <span *ngIf="ficheItem.type !== 'bool'">
-                    {{ fiche[ficheItem.key] }}
-                  </span>
 
-                </td>
-              </tr>
-            </table>
-      </div>
-        
-      <div>
-          <button mat-raised-button class="pointer" routerLink="/banque">Je demande mon financement</button>
-      </div>
-    </mat-card>
 
   </div>
 </div>
