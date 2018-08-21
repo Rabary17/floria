@@ -15,14 +15,14 @@
     </div>
     <mat-card-content class="our-tours-list-item-description">
       <h3>{{ article.titre }}</h3>
-      <p>{{ article.soustitre }}</p>
+      <p class="litle-margin">{{ article.soustitre }}</p>
 
-      <div class="our-tours-price">
+      <div class="our-tours-price font-size-12 normal-text">
         A partir de
-        <span class="font-size-14 mensualite">{{ article.mensualite }} Ar</span>
+        <span class="font-size-14 mensualite">{{ article.mensualite }}200 000 Ar</span>
         / mois
       </div>
-      <div class="our-tours-price">
+      <div class="our-tours-price cash">
         <span class="font-size-18">{{ article.cash | numberfr }} Ar</span>
       </div>
     </mat-card-content>

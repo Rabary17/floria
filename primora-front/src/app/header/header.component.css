@@ -104,9 +104,13 @@ header {
 }
 
 .topnav .search-container{
-  height: 49px;
+  height: 52px;
   padding: 0 15px;
-  line-height: 50px;
+  line-height: 52px;
+}
+
+.topnav .search-container input::placeholder, .topnav .search-container input::-moz-placeholder, .topnav .search-container input::-webkit-input-placeholder{
+color: #fff !important;
 }
 
 @import '~@angular/material/theming';

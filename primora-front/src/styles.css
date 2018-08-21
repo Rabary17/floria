@@ -185,3 +185,7 @@ mat-form-field {
 .color-black {
   color: black;
 }
+
+input::-moz-placeholder, input::-webkit-input-placeholder {
+  color: #fff !important;
+}
