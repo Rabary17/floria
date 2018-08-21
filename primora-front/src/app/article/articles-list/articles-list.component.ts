@@ -32,6 +32,7 @@ export class ArticlesListComponent implements OnInit {
       service = this.articleservice.getArticlesLastest();
     } else {
       if(apiurl) service = this.articleservice.getArticlesFromUrl(apiurl);
+      console.log(service);
     }
     if(service === null) return false;
     service.subscribe(articles => {

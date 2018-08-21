@@ -185,3 +185,7 @@ mat-form-field {
 .color-black {
   color: black;
 }
+
+.outlet-container {
+  margin-top: 30px !important;
+}
