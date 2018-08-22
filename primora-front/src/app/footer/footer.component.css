@@ -38,6 +38,7 @@ a {
 
 i.fa {
     font-size: 30px;
+    transition: 0.5s;
 }
 
 .lign-height2 {
