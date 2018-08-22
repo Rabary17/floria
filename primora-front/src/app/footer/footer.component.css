@@ -15,8 +15,23 @@ footer {
 
 a {
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 .foot-left, .fa {
     margin: 5px;
+}
+
+.fa-facebook-square:hover {
+    color: #3d5998;
+}
+
+.fa-twitter-square:hover {
+    color: #1da1f2;
+}
+
+.fa-instagram:hover {
+    background: -webkit-linear-gradient(#ac429a, #f8cc25);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
