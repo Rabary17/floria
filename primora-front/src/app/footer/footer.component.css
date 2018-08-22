@@ -35,3 +35,11 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+i.fa {
+    font-size: 30px;
+}
+
+.lign-height2 {
+    line-height: 2;
+}
